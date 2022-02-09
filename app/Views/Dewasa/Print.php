@@ -1,15 +1,3 @@
-<?php
-
-//Use this code to convert your image to base64
-// Apply this in a view 
-
-$path = base_url('assets/img/logo-hst.png'); // Modify this part (your_img.png
-$type = pathinfo($path, PATHINFO_EXTENSION);
-$data = file_get_contents($path);
-$base64 = 'data:assets/img/logo-hst.png' . $type . ';base64,' . base64_encode($data);
-'<br/>'
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +15,8 @@ $base64 = 'data:assets/img/logo-hst.png' . $type . ';base64,' . base64_encode($d
 </style>
 
 <body>
-    <img src="<?= $base64 ?>" style="width: 60px; height:auto; position:absolute;" />
+    <img src="assets/img/logo-hst.png" style="width:60px; height:auto; position:absolute;">
+    <img src="assets/img/rsph.png" style="width:60px; height:auto; position:absolute; margin-left:95%;">
     <table width="100%">
         <tr>
             <td align="center">
@@ -39,7 +28,8 @@ $base64 = 'data:assets/img/logo-hst.png' . $type . ';base64,' . base64_encode($d
     </table>
 
     <hr />
-    <br />
+
+    <h4 align="center">Data Peserta Dewasa <?php echo date('F Y') ?></h4>
     <table width="100%" border="2" cellpadding="0">
         <thead>
             <tr>

@@ -62,7 +62,7 @@
                                     <td><?= $row->phone_number ?></td>
                                     <td style="font-size: 9pt;"><?= $row->address ?></td>
                                     <td>
-                                        <!-- Single button -->
+
                                         <div class="nav-item dropdown">
                                             <a class="nav-link" data-toggle="dropdown" href="#">
                                                 <i class="far fa-caret-square-down"></i>

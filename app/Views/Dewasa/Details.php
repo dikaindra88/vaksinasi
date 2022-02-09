@@ -56,6 +56,11 @@
                         <td><?php echo $Detail[0]['vaccination_date']; ?></td>
                     </tr>
                     <tr>
+                        <th>Vaccines Phase</th>
+                        <td>:</td>
+                        <td><?php echo $Detail[0]['vaccines_phase']; ?></td>
+                    </tr>
+                    <tr>
                         <th>Vaccines Type</th>
                         <td>:</td>
                         <td><?php echo $Detail[0]['vaccines_type']; ?></td>

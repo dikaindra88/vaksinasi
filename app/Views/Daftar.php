@@ -78,7 +78,7 @@
 
 <body style="background-image:url(assets/img/gbr1.jpg);background-size:cover;background-attachment:fixed;" class="login-page">
 
-    <!-- Page Loader
+    <!-- Page Loader-->
     <div class="page-loader-wrapper">
         <div class="loader">
             <div class="preloader">
@@ -93,11 +93,12 @@
             </div>
             <p>Memproses data ke server.....</p>
         </div>
-    </div> -->
+    </div>
+    <!-- #END# Page Loader -->
     <?php echo form_open('Daftar/insertData') ?>
     <form method="post" action="" enctype="multipart/form-data">
 
-        <!-- #END# Page Loader -->
+
         <div class="login-box" style="margin: 20px;">
             <div class="logo">
                 <p class="align-center"><img src="assets/img/logo-hst.png" style="width: 100px; height: 100px;"></p>
@@ -233,7 +234,7 @@
                     <div class="col-xs-3"></div>
                     <div class="col-xs-6 align-center">
                         <input type="submit" class="btn btn-block btn-lg bg-green waves-effect mb-5" name="simpan" value="DAFTAR" />
-                        <a href="">
+                        <a href="<?= base_url('Daftar/Validation') ?>">
                             <h6 style="color:black; margin-top:10px;">KLIK DISINI jika sudah Mengisi Formulir Online Sebelumnya</h6>
                         </a>
                     </div><br><br>
@@ -242,6 +243,8 @@
             </div>
         </div>
     </form>
+
+    <!-- End Login Modal -->
     <!-- Jquery Core Js -->
     <script src="plugins/jquery/jquery.min.js"></script>
 

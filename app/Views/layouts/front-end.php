@@ -37,7 +37,7 @@
         <!-- Brand Logo -->
         <a href="" class="brand-link">
             <img src="<?= base_url('assets/img/rsph2.png') ?>" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-            <span class="brand-text font-weight-light">Hai.. <?php session()->get('username') ?></span>
+            <span class="brand-text font-weight-light">RSUD PAKUHAJI</span>
         </a>
 
 
