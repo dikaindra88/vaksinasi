@@ -34,6 +34,15 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/Daftar', 'Daftar::index');
 
+$routes->get('/Dewasa/index', 'Dewasa::index');
+$routes->get('/Dewasa/print', 'Dewasa::print');
+$routes->delete('/Dewasa/(:num)', 'Dewasa::Delete/$1');
+$routes->get('/Dewasa/(:any)', 'Dewasa::getDetail/$1');
+
+$routes->get('/Remaja/index', 'Remaja::index');
+$routes->get('/Remaja/print', 'Remaja::print');
+$routes->delete('/Remaja/(:num)', 'Remaja::Delete/$1');
+$routes->get('/Remaja/(:any)', 'Remaja::getDetail/$1');
 
 
 /*

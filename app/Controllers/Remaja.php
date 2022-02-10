@@ -6,7 +6,7 @@ use App\Models\ParticipantsModel;
 use \Dompdf\Dompdf;
 use \Dompdf\Options;
 
-class Dewasa extends BaseController
+class Remaja extends BaseController
 {
     public function __construct()
     {
@@ -19,12 +19,12 @@ class Dewasa extends BaseController
     {
 
         $data = array(
-            'participant' => $this->Participants->getAllData()
+            'participant' => $this->Participants->getRemaja()
         );
-        $data['dewasa'] = $this->Participants->countDewasa();
-        $data['L'] = $this->Participants->countMale();
-        $data['P'] = $this->Participants->countFemale();
-        echo view('Dewasa/index', $data);
+        $data['remaja'] = $this->Participants->countRemaja();
+        $data['L'] = $this->Participants->countMaler();
+        $data['P'] = $this->Participants->countFemaler();
+        echo view('Remaja/index', $data);
     }
     public function getDetail($participant_id)
     {
@@ -32,7 +32,7 @@ class Dewasa extends BaseController
             'Detail' => $this->Participants->getDetail($participant_id)
         );
 
-        return view('Dewasa/Details', $data);
+        return view('Remaja/Details', $data);
     }
     public function getUpdate($participant_id)
     {
@@ -40,7 +40,7 @@ class Dewasa extends BaseController
             'Update' => $this->Participants->getDetail($participant_id)
         );
 
-        return view('Dewasa/Update', $data);
+        return view('Remaja/Update', $data);
     }
     public function EditAction()
     {
@@ -60,20 +60,20 @@ class Dewasa extends BaseController
         ];
         $this->Participants->editData($data, $participant_id);
         session()->setFlashdata('pesan', 'Data Berhasil Di Ubah.');
-        return redirect()->to('Dewasa/index');
+        return redirect()->to('Remaja/index');
     }
     public function Delete($participant_id)
     {
         $this->Participants->deleteData($participant_id);
         session()->setFlashdata('pesan', 'Data Berhasil Di Hapus.');
-        return redirect()->to('Dewasa/index');
+        return redirect()->to('Remaja/index');
     }
     public function print()
     {
         $data = [
-            'print' => $this->Participants->getAllData()
+            'print' => $this->Participants->getRemaja()
         ];
-        $html = view('Dewasa/Print', $data);
+        $html = view('Remaja/Print', $data);
         $option = new Options();
         $option->setIsRemoteEnabled(true);
         $option->setIsHtml5ParserEnabled(true);

@@ -32,10 +32,26 @@ class ParticipantsModel extends Model
         return $query->getResult();
     }
 
+    // tampil data remaja
+    public function getRemaja()
+    {
+        $query = $this->db->query("SELECT * FROM participant WHERE participant_type='Remaja'");
+
+        return $query->getResult();
+    }
+
     //hitung jumlah data dewasa
     public function countDewasa()
     {
         $query = $this->db->query("SELECT * FROM participant WHERE participant_type='Dewasa'");
+        $dewasa = $query->getNumRows();
+        return $dewasa;
+    }
+
+    //hitung jumlah data remaja
+    public function countRemaja()
+    {
+        $query = $this->db->query("SELECT * FROM participant WHERE participant_type='Remaja'");
         $dewasa = $query->getNumRows();
         return $dewasa;
     }
@@ -48,10 +64,26 @@ class ParticipantsModel extends Model
         return $L;
     }
 
+    //hitung jumlah laki-laki di data remaja
+    public function countMaler()
+    {
+        $query = $this->db->query("SELECT * FROM participant WHERE participant_type='Remaja' AND gender='L'");
+        $L = $query->getNumRows();
+        return $L;
+    }
+
     //hitung jumlah perempuan di data dewasa
     public function countFemale()
     {
         $query = $this->db->query("SELECT * FROM participant WHERE participant_type='Dewasa'AND gender='P'");
+        $P = $query->getNumRows();
+        return $P;
+    }
+
+    //hitung jumlah perempuan di data remaja
+    public function countFemaler()
+    {
+        $query = $this->db->query("SELECT * FROM participant WHERE participant_type='Remaja'AND gender='P'");
         $P = $query->getNumRows();
         return $P;
     }

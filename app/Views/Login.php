@@ -2,7 +2,7 @@
     <!-- /.login-logo -->
     <div class="card card-outline card-primary">
         <div class="card-header text-center">
-            <a href="#" class="h1"><b>Admin</b> RS</a>
+            <a href="#" class="h1"><b>LOGIN</b></a>
         </div>
         <?php echo form_open('auth/cek_login') ?>
         <div class="card-body">
@@ -14,10 +14,11 @@
                         <h6><i class="icon fas fa-exclamation-circle"></i>';
                 echo session()->getFlashdata('pesan');
                 echo '</h6></div>';
-            }
-            ?>
+            }  ?>
 
-            <p class="login-box-msg">Sign in to start your session</p>
+
+
+            <p class="login-box-msg">Login to start your session</p>
             <form action="" method="post">
                 <div class="input-group mb-3">
                     <input type="email" name="email" class="form-control" placeholder="Email">
@@ -39,10 +40,10 @@
                 <div class="col-12">
                     <input type="submit" name="login" value="Login" class="btn btn-primary btn-block" />
                 </div>
-                <!-- /.col -->
+                <!-- /.col 
                 <p class="mb-1 mt-1" style="text-align: center;">
                     <a href="forgot-password.html">I forgot my password</a>
-                </p>
+                </p>-->
                 <?php echo form_close() ?>
         </div>
         </form>

@@ -45,10 +45,13 @@ class Auth extends BaseController
             // valid
             $email = $this->request->getPost('email');
             $password = $this->request->getPost('password');
-            $cek_login = $this->UsersModel->login_user($email, $password);
+            $passwordx = md5($password);
+            $cek_login = $this->UsersModel->login_user($email, $passwordx);
             if ($cek_login) {
-                session()->set('username', $cek_login['username']);
+                session()->set('log', true);
+                session()->set('name', $cek_login['name']);
                 session()->set('email', $cek_login['email']);
+                session()->set('status', $cek_login['status']);
                 return redirect()->to(base_url('/Dashboard'));
             } else {
                 session()->setFlashdata('pesan', 'Email atau Password salah!');
@@ -62,8 +65,8 @@ class Auth extends BaseController
     }
     public function logout()
     {
-        $array_items = array('id_user', 'name', 'username', 'email', 'status');
-        $this->session->remove($array_items);
+        $session = session();
+        $session->destroy();
         return redirect()->to(base_url('auth/login'));
     }
 }

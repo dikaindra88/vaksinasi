@@ -18,4 +18,10 @@ class DashboardModel extends Model
         $remaja = $query->getNumRows();
         return $remaja;
     }
+    public function countChild()
+    {
+        $query = $this->db->query("SELECT * FROM participant where participant_type='Child'");
+        $remaja = $query->getNumRows();
+        return $remaja;
+    }
 }

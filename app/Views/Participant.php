@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Favicon-->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="<?= base_url('assets/img/favicon.ico') ?>" type="image/x-icon">
 
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
@@ -111,15 +111,14 @@
                 <div class="body">
                     <div class="card1">
                         <?php
-                        session()->getFlashdata('tambah');
-                        if (session()->getFlashdata('tambah')) {
-                            echo '  <div class="alert alert-success alert-dismissible">
+                        session()->getFlashdata('pesan');
+                        if (session()->getFlashdata('pesan')) {
+                            echo '  <div class="alert alert-danger alert-dismissible">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                         <h6><i class="icon fas fa-exclamation-circle"></i>';
-                            echo session()->getFlashdata('tambah');
+                            echo session()->getFlashdata('pesan');
                             echo '</h6></div>';
-                        }
-                        ?>
+                        }  ?>
                         <h5 style="text-align:center; margin-top:20px;">Silakan Isi Nomor Nik Yang Anda Daftarkan</h5>
                     </div>
                     <nav style="color:white">
@@ -146,6 +145,7 @@
         </div>
     </form>
     <div class="card1">
+
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-striped table-condensed table-hover" id="example1" width="100%">

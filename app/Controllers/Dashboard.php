@@ -15,6 +15,7 @@ class Dashboard extends BaseController
     {
         $data['dewasa'] = $this->hitung->countDewasa();
         $data['remaja'] = $this->hitung->countRemaja();
+        $data['Child'] = $this->hitung->countChild();
         echo view('Dashboard', $data);
     }
 }
