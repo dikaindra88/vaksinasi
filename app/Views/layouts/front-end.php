@@ -93,9 +93,9 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link <?php if (current_url(true)->getSegment('1') == 'Child') {
-                                                        echo "active";
-                                                    } ?> ">
+                        <a href="<?= base_url('Child/index') ?>" class="nav-link <?php if (current_url(true)->getSegment('1') == 'Child') {
+                                                                                        echo "active";
+                                                                                    } ?> ">
                             <i class="nav-icon fas fa-child"></i>
                             <p>
                                 Anak-Anak
@@ -166,9 +166,9 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link <?php if (current_url(true)->getSegment('1') == 'Child') {
-                                                                        echo "active";
-                                                                    } ?> ">
+                                        <a href="<?= base_url('Child/index') ?>" class="nav-link <?php if (current_url(true)->getSegment('1') == 'Child') {
+                                                                                                        echo "active";
+                                                                                                    } ?> ">
                                             <i class="nav-icon fas fa-child"></i>
                                             <p>
                                                 Anak-Anak
