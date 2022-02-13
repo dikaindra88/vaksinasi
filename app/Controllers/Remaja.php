@@ -19,16 +19,19 @@ class Remaja extends BaseController
     {
 
         $data = array(
+            'title' => 'Halaman | Remaja',
             'participant' => $this->Participants->getRemaja()
         );
         $data['remaja'] = $this->Participants->countRemaja();
         $data['L'] = $this->Participants->countMaler();
         $data['P'] = $this->Participants->countFemaler();
+
         echo view('Remaja/index', $data);
     }
     public function getDetail($participant_id)
     {
         $data = array(
+            'title' => 'Remaja | Detail',
             'Detail' => $this->Participants->getDetail($participant_id)
         );
 
@@ -37,6 +40,7 @@ class Remaja extends BaseController
     public function getUpdate($participant_id)
     {
         $data = array(
+            'title' => 'Remaja | Edit',
             'Update' => $this->Participants->getDetail($participant_id)
         );
 
@@ -52,8 +56,8 @@ class Remaja extends BaseController
             'birth_date' => $this->request->getPost('birth_date'),
             'phone_number' => $this->request->getPost('phone_number'),
             'gender' => $this->request->getPost('gender'),
-            'participant_type' => $this->request->getPost('participant_type'),
-            'vaccines_type' => $this->request->getPost('vaccines_type'),
+            'role_id' => $this->request->getPost('role_id'),
+            'vaccines_id' => $this->request->getPost('vaccines_id'),
             'vaccines_phase' => $this->request->getPost('vaccines_phase'),
             'vaccination_date' => $this->request->getPost('vaccination_date'),
             'address' => $this->request->getPost('address')

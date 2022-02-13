@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="panel panel-default">
             <div class="panel-body">
-                <h1>Data Pribadi Peserta Dewasa</h1>
+                <h1>Data Pribadi Peserta Remaja</h1>
                 <hr />
             </div>
         </div>
@@ -33,7 +33,7 @@
                     <tr>
                         <th>Birth Date</th>
                         <td>:</td>
-                        <td><?php echo $Detail[0]['birth_date']; ?></td>
+                        <td><?php echo ($Detail[0]['birth_date'] != '0000-00-00') ? date('d-m-Y', strtotime($Detail[0]['birth_date'])) : ''  ?></td>
                     </tr>
                     <tr>
                         <th>Gender</th>
@@ -41,29 +41,29 @@
                         <td><?php echo $Detail[0]['gender']; ?></td>
                     </tr>
                     <tr>
+                        <th>Participant Type</th>
+                        <td>:</td>
+                        <td><?php echo $Detail[0]['role']; ?></td>
+                    </tr>
+                    <tr>
                         <th>Phone Number</th>
                         <td>:</td>
                         <td><?php echo $Detail[0]['phone_number']; ?></td>
                     </tr>
                     <tr>
-                        <th>Participant Type</th>
+                        <th>Vaccines Type</th>
                         <td>:</td>
-                        <td><?php echo $Detail[0]['participant_type']; ?></td>
+                        <td><?php echo $Detail[0]['vaccines_type']; ?></td>
                     </tr>
                     <tr>
                         <th>Vaccination Date</th>
                         <td>:</td>
-                        <td><?php echo $Detail[0]['vaccination_date']; ?></td>
+                        <td><?php echo ($Detail[0]['vaccination_date'] != '0000-00-00') ? date('d-m-Y', strtotime($Detail[0]['vaccination_date'])) : ''  ?></td>
                     </tr>
                     <tr>
                         <th>Vaccines Phase</th>
                         <td>:</td>
                         <td><?php echo $Detail[0]['vaccines_phase']; ?></td>
-                    </tr>
-                    <tr>
-                        <th>Vaccines Type</th>
-                        <td>:</td>
-                        <td><?php echo $Detail[0]['vaccines_type']; ?></td>
                     </tr>
                     <tr>
                         <th>Address</th>

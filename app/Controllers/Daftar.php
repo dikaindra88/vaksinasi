@@ -2,7 +2,6 @@
 
 namespace App\Controllers;
 
-use App\Models\Participants;
 use App\Models\ParticipantsModel;
 use \Dompdf\Dompdf;
 use \Dompdf\Options;
@@ -17,8 +16,13 @@ class Daftar extends BaseController
     }
     public function index()
     {
+        $data = array(
+            'title' => 'RSPH | Daftar Vaksinasi',
+            'role' => $this->Participants->getRole(),
+            'vaccines' => $this->Participants->getVaccines()
+        );
 
-        echo view('Daftar');
+        echo view('Daftar', $data);
     }
     public function insertData()
     {
@@ -29,11 +33,11 @@ class Daftar extends BaseController
             'birth_date' => $this->request->getPost('birth_date'),
             'phone_number' => $this->request->getPost('phone_number'),
             'gender' => $this->request->getPost('gender'),
-            'participant_type' => $this->request->getPost('participant_type'),
-            'vaccines_type' => $this->request->getPost('vaccines_type'),
+            'role_id' => $this->request->getPost('role_id'),
+            'vaccines_id' => $this->request->getPost('vaccines_id'),
             'vaccines_phase' => $this->request->getPost('vaccines_phase'),
             'vaccination_date' => $this->request->getPost('vaccination_date'),
-            'address' => $this->request->getPost('address')
+            'address' => $this->request->getPost('address'),
         ];
         $this->Participants->insertData($data);
         session()->setFlashdata('tambah', 'Data berhasil di tambahkan!');
@@ -42,11 +46,11 @@ class Daftar extends BaseController
     public function validation()
     {
         $data['nik'] = $this->request->getPost('participant_nik');
-        $data['getdata'] = $this->Participants->getData($data['nik'])->getResult();
+        $data['getdata'] = $this->Participants->getData($data['nik']);
         /*$data = array(
             'getdata' => $this->Participants->getData($nik)
         );*/
-        #dd($data);
+
 
         return view('/Participant', $data); #$data
     }
@@ -55,8 +59,8 @@ class Daftar extends BaseController
         $data = array(
             'print' => $this->Participants->getPeserta($participant_nik)
         );
-        #dd($data);
-        #return 
+        //dd($data);
+        //return 
         $html = view('/Print', $data);
         $option = new Options();
         $option->set('IsRemoteEnabled', TRUE);

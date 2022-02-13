@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>RSUD PAKUHAJI</title>
+    <title><?php echo $title ?></title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -171,12 +171,15 @@
                             <i class="material-icons">view_list</i>
                         </span>
                         <div class="form-line">
-                            <select class="form-select form-select-lg mb-3" name="participant_type" style="border: none;" aria-label="Default select example">
+
+                            <select class="form-select form-select-lg mb-3" name="role_id" style="border: none;" aria-label="Default select example">
+
                                 <option disabled selected>Pilih Kategori Usia</option>
-                                <option value="Dewasa">Dewasa</option>
-                                <option value="Remaja">Remaja</option>
-                                <option value="Child">Anak-Anak</option>
+                                <?php foreach ($role as $row) : ?>
+                                    <option value="<?= $row['role_id'] ?>"><?= $row['role'] ?></option>
+                                <?php endforeach ?>
                             </select>
+
                         </div>
                     </div>
 
@@ -194,11 +197,11 @@
                             <i class="material-icons">vaccines</i>
                         </span>
                         <div class="form-line">
-                            <select class="form-select form-select-lg mb-3" name="vaccines_type" style="border: none;" aria-label="Default select example">
+                            <select class="form-select form-select-lg mb-3" name="vaccines_id" style="border: none;" aria-label="Default select example">
                                 <option disabled selected>Pilih Tipe Vaksin</option>
-                                <option value="Sinovac">Sinovac</option>
-                                <option value="Astrazeneca">Astrazeneca</option>
-                                <option value="Booster">Booster</option>
+                                <?php foreach ($vaccines as $row) : ?>
+                                    <option value="<?= $row['vaccines_id'] ?>"><?= $row['vaccines_type'] ?></option>
+                                <?php endforeach ?>
                             </select>
                         </div>
                     </div>
@@ -232,6 +235,7 @@
                         </div>
                     </div>
                     <br>
+                    <input type="hidden" class="form-control" name="create_at" value="<?php echo date('Y-m-d H:i:s'); ?>" />
                     <div class="col-xs-3"></div>
                     <div class="col-xs-6 align-center">
                         <input type="submit" class="btn btn-block btn-lg bg-green waves-effect mb-5" name="simpan" value="DAFTAR" />
@@ -280,6 +284,7 @@
             autosize($('textarea.auto-growth'));
 
             $('.datepicker').bootstrapMaterialDatePicker({
+
                 format: 'YYYY-MM-DD',
                 clearButton: true,
                 weekStart: 1,

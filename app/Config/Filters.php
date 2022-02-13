@@ -2,6 +2,7 @@
 
 namespace Config;
 
+use App\Filters\Staf;
 use App\Filters\Users;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
@@ -24,7 +25,8 @@ class Filters extends BaseConfig
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
-        'users'         => Users::class
+        'users'         => Users::class,
+        'staf'          => Staf::class,
     ];
 
     /**
@@ -36,10 +38,49 @@ class Filters extends BaseConfig
     public $globals = [
         'before' => [
             // 'honeypot',
-            // 'csrf',
-            // 'invalidchars',
+            'csrf',
+
+            'users' => [
+                'except' => [
+                    'Auth/*',
+                    'logout/*'
+                ]
+                // 'invalidchars',
+            ],
+            'staf' => [
+                'except' => [
+                    'Auth/*',
+                    'logout/*'
+                ]
+                // 'invalidchars',
+            ]
+
         ],
+
         'after' => [
+            'users' => [
+                'except' => [
+                    'Child/*',
+                    'Dashboard/*',
+                    'Dewasa/*',
+                    'Remaja/*',
+                    'Jadwal/*',
+                    'Vaccines/*',
+                    'Admin/*'
+                ]
+                // 'invalidchars',
+            ],
+            'staf' => [
+                'except' => [
+                    'Child/*',
+                    'Dashboard/*',
+                    'Dewasa/*',
+                    'Remaja/*',
+                    'Jadwal/*',
+                    'Vaccines/*'
+                ]
+                // 'invalidchars',
+            ],
             'toolbar',
             // 'honeypot',
             // 'secureheaders',

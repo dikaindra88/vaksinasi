@@ -13,6 +13,9 @@ class Dashboard extends BaseController
     }
     public function index()
     {
+        $data = [
+            'title' => 'Halaman | Dashboard'
+        ];
         $data['dewasa'] = $this->hitung->countDewasa();
         $data['remaja'] = $this->hitung->countRemaja();
         $data['Child'] = $this->hitung->countChild();

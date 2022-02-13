@@ -66,7 +66,7 @@ use PhpParser\Node\Stmt\Echo_;
         <tr>
             <th>Participant Type</th>
             <td>:</td>
-            <td><?php echo $print[0]['participant_type']; ?></td>
+            <td><?php echo $print[0]['role']; ?></td>
         </tr>
 
         <tr>

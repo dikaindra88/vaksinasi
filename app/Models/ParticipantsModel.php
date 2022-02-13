@@ -8,6 +8,7 @@ class ParticipantsModel extends Model
 {
     protected $table   = 'participant';
     protected $participant_id = 'participant_id';
+    protected $createdField         = 'create_at';
 
     //tambah peserta
     public function insertData($data)
@@ -19,39 +20,71 @@ class ParticipantsModel extends Model
     //cetak data peserta
     public function getData($participant_nik)
     {
-        $query = $this->db->table('participant')->where('participant_nik', $participant_nik);
-        return $query->get();
+        return $this->db->table('participant')
+            ->join('role', 'role.role_id=participant.role_id')
+            ->join('vaccines', 'vaccines.vaccines_id=participant.vaccines_id')
+            ->where('participant.participant_nik', $participant_nik)
+            ->get()->getResultArray();
     }
 
 
-    // tampil data dewasa
-    public function getAllData()
+    // tampil all data 
+    public function getAll()
     {
-        $query = $this->db->query("SELECT * FROM participant WHERE participant_type='Dewasa'");
+        return $this->db->table('participant')
+            ->join('role', 'role.role_id=participant.role_id')
+            ->join('vaccines', 'vaccines.vaccines_id=participant.vaccines_id')
+            ->get()->getResultArray();
+    }
+    // tampil data role 
+    public function getRole()
+    {
+        return $this->db->table('role')
 
-        return $query->getResult();
+            ->get()->getResultArray();
+    }
+
+    public function getVaccines()
+    {
+        return $this->db->table('vaccines')
+
+            ->get()->getResultArray();
+    }
+
+    // tampil data dewasa
+    public function getDewasa()
+    {
+        return $this->db->table('participant')
+            ->join('role', 'role.role_id=participant.role_id')
+            ->join('vaccines', 'vaccines.vaccines_id=participant.vaccines_id')
+            ->where('participant.role_id', '1')
+            ->get()->getResultArray();
     }
 
     // tampil data remaja
     public function getRemaja()
     {
-        $query = $this->db->query("SELECT * FROM participant WHERE participant_type='Remaja'");
-
-        return $query->getResult();
+        return $this->db->table('participant')
+            ->join('role', 'role.role_id=participant.role_id')
+            ->join('vaccines', 'vaccines.vaccines_id=participant.vaccines_id')
+            ->where('participant.role_id', '2')
+            ->get()->getResultArray();
     }
 
     // tampil data anak-anak
     public function getChild()
     {
-        $query = $this->db->query("SELECT * FROM participant WHERE participant_type='Child'");
-
-        return $query->getResult();
+        return $this->db->table('participant')
+            ->join('role', 'role.role_id=participant.role_id')
+            ->join('vaccines', 'vaccines.vaccines_id=participant.vaccines_id')
+            ->where('participant.role_id', '3')
+            ->get()->getResultArray();
     }
 
     //hitung jumlah data dewasa
     public function countDewasa()
     {
-        $query = $this->db->query("SELECT * FROM participant WHERE participant_type='Dewasa'");
+        $query = $this->db->query("SELECT * FROM participant WHERE role_id='1'");
         $dewasa = $query->getNumRows();
         return $dewasa;
     }
@@ -59,23 +92,23 @@ class ParticipantsModel extends Model
     //hitung jumlah data remaja
     public function countRemaja()
     {
-        $query = $this->db->query("SELECT * FROM participant WHERE participant_type='Remaja'");
-        $dewasa = $query->getNumRows();
-        return $dewasa;
+        $query = $this->db->query("SELECT * FROM participant WHERE role_id='2'");
+        $remaja = $query->getNumRows();
+        return $remaja;
     }
 
     //hitung jumlah data anak-anak
     public function countChild()
     {
-        $query = $this->db->query("SELECT * FROM participant WHERE participant_type='Child'");
-        $dewasa = $query->getNumRows();
-        return $dewasa;
+        $query = $this->db->query("SELECT * FROM participant WHERE role_id='3'");
+        $Child = $query->getNumRows();
+        return $Child;
     }
 
     //hitung jumlah laki-laki di data dewasa
     public function countMale()
     {
-        $query = $this->db->query("SELECT * FROM participant WHERE participant_type='Dewasa' AND gender='L'");
+        $query = $this->db->query("SELECT * FROM participant WHERE role_id='1' AND gender='L'");
         $L = $query->getNumRows();
         return $L;
     }
@@ -83,7 +116,7 @@ class ParticipantsModel extends Model
     //hitung jumlah laki-laki di data remaja
     public function countMaler()
     {
-        $query = $this->db->query("SELECT * FROM participant WHERE participant_type='Remaja' AND gender='L'");
+        $query = $this->db->query("SELECT * FROM participant WHERE role_id='2' AND gender='L'");
         $L = $query->getNumRows();
         return $L;
     }
@@ -91,7 +124,7 @@ class ParticipantsModel extends Model
     //hitung jumlah laki-laki di data anak-anak
     public function countMalec()
     {
-        $query = $this->db->query("SELECT * FROM participant WHERE participant_type='Child' AND gender='L'");
+        $query = $this->db->query("SELECT * FROM participant WHERE role_id='3' AND gender='L'");
         $L = $query->getNumRows();
         return $L;
     }
@@ -99,7 +132,7 @@ class ParticipantsModel extends Model
     //hitung jumlah perempuan di data dewasa
     public function countFemale()
     {
-        $query = $this->db->query("SELECT * FROM participant WHERE participant_type='Dewasa'AND gender='P'");
+        $query = $this->db->query("SELECT * FROM participant WHERE role_id='1'AND gender='P'");
         $P = $query->getNumRows();
         return $P;
     }
@@ -107,7 +140,7 @@ class ParticipantsModel extends Model
     //hitung jumlah perempuan di data remaja
     public function countFemaler()
     {
-        $query = $this->db->query("SELECT * FROM participant WHERE participant_type='Remaja'AND gender='P'");
+        $query = $this->db->query("SELECT * FROM participant WHERE role_id='2'AND gender='P'");
         $P = $query->getNumRows();
         return $P;
     }
@@ -115,7 +148,7 @@ class ParticipantsModel extends Model
     //hitung jumlah perempuan di data anak-anak
     public function countFemalec()
     {
-        $query = $this->db->query("SELECT * FROM participant WHERE participant_type='Child'AND gender='P'");
+        $query = $this->db->query("SELECT * FROM participant WHERE role_id='3'AND gender='P'");
         $P = $query->getNumRows();
         return $P;
     }
@@ -137,17 +170,19 @@ class ParticipantsModel extends Model
     //detail data dewasa
     public function getDetail($participant_id)
     {
-        $sql = "SELECT * FROM participant WHERE participant_id='$participant_id'";
-        $query = $this->db->query($sql);
-        $data = $query->getResultArray();
-        return $data;
+        return $this->db->table('participant')
+            ->join('role', 'role.role_id=participant.role_id')
+            ->join('vaccines', 'vaccines.vaccines_id=participant.vaccines_id')
+            ->where('participant.participant_id', $participant_id)
+            ->get()->getResultArray();
     }
 
     public function getPeserta($participant_nik)
     {
-        $sql = "SELECT * FROM participant WHERE participant_nik='$participant_nik'";
-        $query = $this->db->query($sql);
-        $data = $query->getResultArray();
-        return $data;
+        return $this->db->table('participant')
+            ->join('role', 'role.role_id=participant.role_id')
+            ->join('vaccines', 'vaccines.vaccines_id=participant.vaccines_id')
+            ->where('participant.participant_nik', $participant_nik)
+            ->get()->getResultArray();
     }
 }

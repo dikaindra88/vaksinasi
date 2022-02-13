@@ -172,18 +172,18 @@
 
                             <tr>
 
-                                <td style="font-size: 9pt;"><?= $row->participant_nik ?></td>
-                                <td style="font-size: 9pt;"><?= $row->participant_name ?></td>
+                                <td style="font-size: 9pt;"><?= $row['participant_nik'] ?></td>
+                                <td style="font-size: 9pt;"><?= $row['participant_name'] ?></td>
 
-                                <td style="font-size: 9pt;"><?= $row->gender ?></td>
-                                <td style="font-size: 9pt;"><?= $row->birth_date ?></td>
-                                <td style="font-size: 9pt;"><?= $row->vaccines_type ?></td>
-                                <td style="font-size: 9pt;"><?= $row->vaccines_phase ?></td>
-                                <td style="font-size: 9pt;"><?= $row->vaccination_date ?></td>
-                                <td style="font-size: 9pt;"><?= $row->phone_number ?></td>
-                                <td style="font-size: 9pt;"><?= $row->address ?></td>
+                                <td style="font-size: 9pt;"><?= $row['gender'] ?></td>
+                                <td style="font-size: 9pt;"><?= $row['birth_date'] ?></td>
+                                <td style="font-size: 9pt;"><?= $row['vaccines_type'] ?></td>
+                                <td style="font-size: 9pt;"><?= $row['vaccines_phase'] ?></td>
+                                <td style="font-size: 9pt;"><?= $row['vaccination_date'] ?></td>
+                                <td style="font-size: 9pt;"><?= $row['phone_number'] ?></td>
+                                <td style="font-size: 9pt;"><?= $row['address'] ?></td>
                                 <td>
-                                    <form action="<?= base_url('Daftar/cetak/') . '/' . $row->participant_nik ?>" method="post">
+                                    <form action="<?= base_url('Daftar/cetak/') . '/' . $row['participant_nik'] ?>" method="post">
                                         <?= csrf_field(); ?>
                                         <input type="hidden" name="_method" value="Cetak">
                                         <button type="submit" class="btn"><i class="nav-icon fas fa-print"></i>

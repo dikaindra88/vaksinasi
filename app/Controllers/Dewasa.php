@@ -19,8 +19,10 @@ class Dewasa extends BaseController
     {
 
         $data = array(
-            'participant' => $this->Participants->getAllData()
+            'title' => 'Halaman | Dewasa',
+            'participant' => $this->Participants->getDewasa()
         );
+
         $data['dewasa'] = $this->Participants->countDewasa();
         $data['L'] = $this->Participants->countMale();
         $data['P'] = $this->Participants->countFemale();
@@ -29,6 +31,7 @@ class Dewasa extends BaseController
     public function getDetail($participant_id)
     {
         $data = array(
+            'title' => 'Dewasa | Detail',
             'Detail' => $this->Participants->getDetail($participant_id)
         );
 
@@ -37,6 +40,7 @@ class Dewasa extends BaseController
     public function getUpdate($participant_id)
     {
         $data = array(
+            'title' => 'Dewasa | Edit',
             'Update' => $this->Participants->getDetail($participant_id)
         );
 
@@ -51,9 +55,9 @@ class Dewasa extends BaseController
             'participant_name' => $this->request->getPost('participant_name'),
             'birth_date' => $this->request->getPost('birth_date'),
             'phone_number' => $this->request->getPost('phone_number'),
+            'role_id' => $this->request->getPost('role_id'),
+            'vaccines_id' => $this->request->getPost('vaccines_id'),
             'gender' => $this->request->getPost('gender'),
-            'participant_type' => $this->request->getPost('participant_type'),
-            'vaccines_type' => $this->request->getPost('vaccines_type'),
             'vaccines_phase' => $this->request->getPost('vaccines_phase'),
             'vaccination_date' => $this->request->getPost('vaccination_date'),
             'address' => $this->request->getPost('address')
@@ -71,8 +75,10 @@ class Dewasa extends BaseController
     public function print()
     {
         $data = [
-            'print' => $this->Participants->getAllData()
+            'print' => $this->Participants->getDewasa()
         ];
+
+        //return 
         $html = view('Dewasa/Print', $data);
         $option = new Options();
         $option->setIsRemoteEnabled(true);

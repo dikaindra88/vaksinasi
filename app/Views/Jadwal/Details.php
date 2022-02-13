@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="panel panel-default">
             <div class="panel-body">
-                <h1>Data Pribadi Peserta Dewasa</h1>
+                <h1>Detail Data Peserta</h1>
                 <hr />
             </div>
         </div>
@@ -33,7 +33,7 @@
                     <tr>
                         <th>Birth Date</th>
                         <td>:</td>
-                        <td><?php echo ($Detail[0]['birth_date'] != '0000-00-00') ? date('d-m-Y', strtotime($Detail[0]['birth_date'])) : ''  ?></td>
+                        <td><?php echo $Detail[0]['birth_date']; ?></td>
                     </tr>
                     <tr>
                         <th>Gender</th>
@@ -58,7 +58,7 @@
                     <tr>
                         <th>Vaccination Date</th>
                         <td>:</td>
-                        <td><?php echo ($Detail[0]['vaccination_date'] != '0000-00-00') ? date('d-m-Y', strtotime($Detail[0]['vaccination_date'])) : ''  ?></td>
+                        <td><?php echo $Detail[0]['vaccination_date']; ?></td>
                     </tr>
                     <tr>
                         <th>Vaccines Phase</th>
@@ -69,6 +69,11 @@
                         <th>Address</th>
                         <td>:</td>
                         <td><?php echo $Detail[0]['address']; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Register Date</th>
+                        <td>:</td>
+                        <td><?php echo ($Detail[0]['create_at'] != '0000-00-00') ? Date('d-m-Y H:i:s', strtotime($Detail[0]['create_at'])) : '' ?></td>
                     </tr>
 
                 </table>

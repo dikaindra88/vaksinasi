@@ -4,14 +4,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin RS | Dashboard</title>
+    <title><?php echo $title ?></title>
     <link rel="shortcut icon" href="<?= base_url('assets/img/favicon.ico') ?>" type="image/x-icon">
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="<?= base_url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback') ?>">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="<?= base_url('plugins/fontawesome-free/css/all.min.css') ?>">
     <!-- Ionicons -->
     <link rel="stylesheet" href="<?= base_url('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css') ?>">
+    <!-- Material Icon Css -->
+    <link href="<?= base_url('assets/css/material-icon.css') ?>" rel="stylesheet">
     <!-- Tempusdominus Bootstrap 4 -->
     <link rel="stylesheet" href="<?= base_url('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') ?>">
     <!-- iCheck -->

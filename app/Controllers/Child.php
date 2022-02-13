@@ -19,6 +19,7 @@ class Child extends BaseController
     {
 
         $data = array(
+            'title' => 'Halaman | Anak-anak',
             'participant' => $this->Participants->getChild()
         );
         $data['Child'] = $this->Participants->countChild();
@@ -29,6 +30,7 @@ class Child extends BaseController
     public function getDetail($participant_id)
     {
         $data = array(
+            'title' => 'Anak-anak | Detail',
             'Detail' => $this->Participants->getDetail($participant_id)
         );
 
@@ -37,6 +39,7 @@ class Child extends BaseController
     public function getUpdate($participant_id)
     {
         $data = array(
+            'title' => 'Anak-anak | Edit',
             'Update' => $this->Participants->getDetail($participant_id)
         );
 
@@ -52,8 +55,8 @@ class Child extends BaseController
             'birth_date' => $this->request->getPost('birth_date'),
             'phone_number' => $this->request->getPost('phone_number'),
             'gender' => $this->request->getPost('gender'),
-            'participant_type' => $this->request->getPost('participant_type'),
-            'vaccines_type' => $this->request->getPost('vaccines_type'),
+            'role_id' => $this->request->getPost('role_id'),
+            'vaccines_id' => $this->request->getPost('vaccines_id'),
             'vaccines_phase' => $this->request->getPost('vaccines_phase'),
             'vaccination_date' => $this->request->getPost('vaccination_date'),
             'address' => $this->request->getPost('address')

@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="panel panel-default">
             <div class="panel-body">
-                <h1>Data Pribadi Peserta Dewasa</h1>
+                <h1>Data Pribadi Peserta Remaja</h1>
                 <hr />
             </div>
         </div>
@@ -50,7 +50,14 @@
                         <tr>
                             <th>Participant Type</th>
                             <td>:</td>
-                            <td><input type="text" class="form-control" name="participant_type" value="<?php echo $Update[0]['participant_type']; ?>"></td>
+                            <td>
+                                <select class="form-control selectpicker" name="role_id" required>
+                                    <option value="<?php echo $Update[0]['role_id'] ?>" selected><?php echo $Update[0]['role'] ?></option>
+                                    <option value="1">Dewasa</option>
+                                    <option value="2">Remaja</option>
+                                    <option value="3">Anak-anak</option>
+                                </select>
+                            </td>
                         </tr>
                         <tr>
                             <th>Vaccination Date</th>
@@ -68,7 +75,14 @@
                         <tr>
                             <th>Vaccines Type</th>
                             <td>:</td>
-                            <td><input type="text" class="form-control" name="vaccines_type" value="<?php echo $Update[0]['vaccines_type']; ?>"></td>
+                            <td>
+                                <select class="form-control selectpicker" name="vaccines_id" required>
+                                    <option value="<?php echo $Update[0]['vaccines_id'] ?>" selected><?php echo $Update[0]['vaccines_type'] ?></option>
+                                    <option value="1">Sinovac</option>
+                                    <option value="2">Astrazeneca</option>
+                                    <option value="3">Booster</option>
+                                </select>
+                            </td>
                         </tr>
                         <tr>
                             <th>Vaccines Phase</th>

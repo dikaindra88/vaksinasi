@@ -53,16 +53,16 @@
             <?php foreach ($print as $row) : ?>
                 <tr style="text-align: center;">
                     <td><?php echo $nomor++ ?>.</td>
-                    <td><?= $row->participant_nik ?></td>
-                    <td><?= $row->participant_name ?></td>
+                    <td><?= $row['participant_nik'] ?></td>
+                    <td><?= $row['participant_name'] ?></td>
 
-                    <td><?= $row->gender ?></td>
-                    <td><?= $row->birth_date ?></td>
-                    <td><?= $row->vaccines_type ?></td>
-                    <td><?= $row->vaccines_phase ?></td>
-                    <td><?= $row->vaccination_date ?></td>
-                    <td><?= $row->phone_number ?></td>
-                    <td style="font-size: 9pt;"><?= $row->address ?></td>
+                    <td><?= $row['gender'] ?></td>
+                    <td><?= ($row['birth_date'] != '0000-00-00') ? date('d-m-Y', strtotime($row['birth_date'])) : '' ?></td>
+                    <td><?= $row['vaccines_type'] ?></td>
+                    <td><?= $row['vaccines_phase'] ?></td>
+                    <td><?= ($row['vaccination_date'] != '0000-00-00') ? date('d-m-Y', strtotime($row['vaccination_date'])) : '' ?></td>
+                    <td><?= $row['phone_number'] ?></td>
+                    <td style="font-size: 9pt;"><?= $row['address'] ?></td>
 
                 </tr>
             <?php endforeach ?>

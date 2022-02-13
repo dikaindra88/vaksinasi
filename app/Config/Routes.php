@@ -33,6 +33,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/Daftar', 'Daftar::index');
+$routes->post('/Auth/cek_login', 'Auth::cek_login');
 
 //Routes Dewasa
 $routes->get('/Dewasa/index', 'Dewasa::index');
@@ -48,6 +49,16 @@ $routes->get('/Remaja/(:any)', 'Remaja::getDetail/$1');
 
 //Routes Anak-anak
 $routes->get('/Child/index', 'Child::index');
+$routes->get('/Child/print', 'Child::print');
+$routes->delete('/Child/(:num)', 'Child::Delete/$1');
+$routes->get('/Child/(:any)', 'Admin::getDetail/$1');
+
+//Routes Anak-anak
+$routes->get('/Admin/index', 'Admin::index');
+$routes->get('/Admin/Add', 'Admin::Add');
+$routes->delete('/Admin/(:num)', 'Admin::Delete/$1');
+$routes->get('/Admin/(:any)', 'Admin::getDetail/$1');
+
 
 /*
  * --------------------------------------------------------------------

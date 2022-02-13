@@ -60,16 +60,16 @@
                             <?php foreach ($participant as $row) : ?>
                                 <tr>
                                     <td><?php echo $nomor++ ?>.</td>
-                                    <td><?= $row->participant_nik ?></td>
-                                    <td><?= $row->participant_name ?></td>
+                                    <td><?= $row['participant_nik'] ?></td>
+                                    <td><?= $row['participant_name'] ?></td>
 
-                                    <td><?= $row->gender ?></td>
-                                    <td><?= $row->birth_date ?></td>
-                                    <td><?= $row->vaccines_type ?></td>
-                                    <td><?= $row->vaccines_phase ?></td>
-                                    <td><?= $row->vaccination_date ?></td>
-                                    <td><?= $row->phone_number ?></td>
-                                    <td style="font-size: 9pt;"><?= $row->address ?></td>
+                                    <td><?= $row['gender'] ?></td>
+                                    <td><?= ($row['birth_date'] != '0000-00-00') ? date('d-m-Y', strtotime($row['birth_date'])) : '' ?></td>
+                                    <td><?= $row['vaccines_type'] ?></td>
+                                    <td><?= $row['vaccines_phase'] ?></td>
+                                    <td><?= ($row['vaccination_date'] != '0000-00-00') ? date('d-m-Y', strtotime($row['vaccination_date'])) : '' ?></td>
+                                    <td><?= $row['phone_number'] ?></td>
+                                    <td style="font-size: 9pt;"><?= $row['address'] ?></td>
                                     <td>
 
                                         <div class="nav-item dropdown">
@@ -77,7 +77,7 @@
                                                 <i class="far fa-caret-square-down"></i>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right">
-                                                <form action="<?= base_url('Child/getDetail/') . '/' . $row->participant_id ?>" method="post">
+                                                <form action="<?= base_url('Child/getDetail/') . '/' . $row['participant_id'] ?>" method="post">
                                                     <?= csrf_field(); ?>
                                                     <input type="hidden" name="_method" value="Details">
                                                     <button type="submit" class="dropdown-item"><i class="nav-icon fas fa-eye"></i>
@@ -85,7 +85,7 @@
                                                     </button>
                                                 </form>
                                                 <div class="dropdown-divider"></div>
-                                                <form action="<?= base_url('Child/getUpdate/') . '/' . $row->participant_id ?>" method="post">
+                                                <form action="<?= base_url('Child/getUpdate/') . '/' . $row['participant_id'] ?>" method="post">
                                                     <?= csrf_field(); ?>
                                                     <input type="hidden" name="_method" value="Edit">
                                                     <button type="submit" class="dropdown-item"><i class="nav-icon fas fa-edit"></i>
@@ -93,7 +93,7 @@
                                                     </button>
                                                 </form>
                                                 <div class="dropdown-divider"></div>
-                                                <form action="<?= base_url('Child/Delete/') . '/' . $row->participant_id ?>" method="post">
+                                                <form action="<?= base_url('Child/Delete/') . '/' . $row['participant_id'] ?>" method="post">
                                                     <?= csrf_field(); ?>
                                                     <input type="hidden" name="_method" value="Delete">
                                                     <button type="submit" class="dropdown-item" onclick="return confirm('Apakah anda yakin?');"><i class="nav-icon fas fa-trash-alt"></i>
