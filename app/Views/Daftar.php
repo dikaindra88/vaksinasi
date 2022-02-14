@@ -52,6 +52,7 @@
             $('#datepicker').on('change', function() {
                 var dob = new Date(this.value);
                 var today = new Date();
+                var minDate = $(".datepicker1").datepicker("option", "minDate");
                 var age = Math.floor((today - dob) / (365.25 * 24 * 60 * 60 * 1000));
                 $('#umur').val(age);
             });
@@ -134,7 +135,7 @@
                             <i class="material-icons">lock</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="participant_nik" placeholder=" No. KTP Anda" maxlength="20" required autofocus />
+                            <input type="text" class="form-control" name="participant_nik" autocomplete="hidden" placeholder=" No. KTP Anda" maxlength="20" required autofocus />
                         </div>
                     </div>
 
@@ -143,7 +144,7 @@
                             <i class="material-icons">person</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="participant_name" placeholder=" Nama Lengkap Anda" required autofocus />
+                            <input type="text" class="form-control" name="participant_name" autocomplete="hidden" placeholder=" Nama Lengkap Anda" required autofocus />
                         </div>
                     </div>
 
@@ -152,7 +153,7 @@
                             <i class="material-icons">event</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control datepicker" name="birth_date" id="datepicker" placeholder=" Tgl Lahir Anda (Bukan Tgl Saat ini)" required autofocus />
+                            <input type="text" class="form-control datepicker" name="birth_date" id="datepicker" autocomplete="hidden" placeholder=" Tgl Lahir Anda (Bukan Tgl Saat ini)" required autofocus />
 
                         </div>
                     </div>
@@ -162,7 +163,7 @@
                             <i class="material-icons">whatsapp</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="phone_number" minlength="10" maxlength="15" placeholder=" Nomor Telepon/ HP Anda contoh : +62822xxxx" required autofocus />
+                            <input type="text" class="form-control" name="phone_number" autocomplete="hidden" minlength="10" maxlength="15" placeholder=" Nomor Telepon/ HP Anda contoh : +62822xxxx" required autofocus />
                         </div>
                     </div>
 
@@ -188,7 +189,7 @@
                             <i class="material-icons">event</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control datepicker" name="vaccination_date" id="datepicker" placeholder=" Silahkan pilih tanggal untuk melakukan vaksinasi" required autofocus />
+                            <input type="input" class="form-control datepicker1" name="vaccination_date" id="datepicker1" autocomplete="hidden" placeholder=" Pilih tanggal untuk melakukan vaksinasi" required autofocus />
                         </div>
                     </div>
 
@@ -271,6 +272,7 @@
     <!-- Moment Plugin Js -->
     <script src="plugins/momentjs/moment.js"></script>
 
+
     <!-- Bootstrap Material Datetime Picker Plugin Js -->
     <script src="plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
 
@@ -285,11 +287,34 @@
 
             $('.datepicker').bootstrapMaterialDatePicker({
 
+
                 format: 'YYYY-MM-DD',
                 clearButton: true,
                 weekStart: 1,
                 time: false
             });
+
+        });
+        $(document).ready(function() {
+
+            //Textare auto growth
+            autosize($('textarea.auto-growth'));
+
+
+            // Setter
+
+            $('.datepicker1').datepicker({
+                minDate: -0,
+
+                autoclose: true,
+                todayHighlight: true,
+                format: 'YYYY-MM-DD',
+                clearButton: true,
+                weekStart: 1,
+                time: false
+
+            });
+
 
         });
     </script>
