@@ -51,7 +51,6 @@ class Daftar extends BaseController
             'getdata' => $this->Participants->getData($nik)
         );*/
 
-
         return view('/Participant', $data); #$data
     }
     public function cetak($participant_nik)
@@ -59,7 +58,7 @@ class Daftar extends BaseController
         $data = array(
             'print' => $this->Participants->getPeserta($participant_nik)
         );
-        //dd($data);
+
         //return 
         $html = view('/Print', $data);
         $option = new Options();

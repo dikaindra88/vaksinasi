@@ -11,17 +11,15 @@ class Staf implements FilterInterface
     public function before(RequestInterface $request, $arguments = null)
     {
         // Do something here
-        if (session()->get('status') == '') {
-            session()->setFlashdata('pesan', 'Anda belum login, Silahkan Login Dulu !');
-            return redirect()->to(base_url('Auth/login'));
-        }
+        // if (is_null(session()->get('status'))) {
+        //     return redirect()->to(base_url('Auth/login'));
+        // }
     }
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        if (session()->get('status') == 'staf') {
-
-            return redirect()->to(base_url('Dashboard/index'));
-        }
+        // if (is_null(session()->get('status'))) {
+        //     return redirect()->to(base_url('Dashboard/index'));
+        // }
     }
 }

@@ -22,10 +22,14 @@ class Child extends BaseController
             'title' => 'Halaman | Anak-anak',
             'participant' => $this->Participants->getChild()
         );
-        $data['Child'] = $this->Participants->countChild();
-        $data['L'] = $this->Participants->countMalec();
-        $data['P'] = $this->Participants->countFemalec();
-        echo view('Child/index', $data);
+        if (session()->get('status') == True) {
+            $data['Child'] = $this->Participants->countChild();
+            $data['L'] = $this->Participants->countMalec();
+            $data['P'] = $this->Participants->countFemalec();
+            echo view('Child/index', $data);
+        } else {
+            return redirect()->to('Auth/login');
+        }
     }
     public function getDetail($participant_id)
     {

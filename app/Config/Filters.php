@@ -42,15 +42,25 @@ class Filters extends BaseConfig
 
             'users' => [
                 'except' => [
-                    'Auth/*',
-                    'logout/*'
+                    // 'Auth/*',
+                    // '/',
+                    // '/Daftar',
+                    // '/Participant',
+                    // 'Daftar/*',
+                    // 'Daftar/*/*',
+
                 ]
                 // 'invalidchars',
             ],
             'staf' => [
                 'except' => [
-                    'Auth/*',
-                    'logout/*'
+                    // 'Auth/*',
+                    // '/Daftar',
+                    // 'Daftar/*',
+                    // '/',
+                    // '/Participant',
+                    // 'Daftar/*/*',
+
                 ]
                 // 'invalidchars',
             ]
@@ -60,24 +70,37 @@ class Filters extends BaseConfig
         'after' => [
             'users' => [
                 'except' => [
-                    'Child/*',
-                    'Dashboard/*',
-                    'Dewasa/*',
-                    'Remaja/*',
-                    'Jadwal/*',
-                    'Vaccines/*',
-                    'Admin/*'
+                    // 'Child/*',
+                    // 'Dashboard/*',
+                    // 'Dewasa/*',
+                    // 'Remaja/*',
+                    // 'Jadwal/*',
+                    // 'Vaccines/*',
+                    // '/Daftar',
+                    // 'Admin/*',
+                    // 'Daftar/*',
+                    // '/',
+                    // '/Participant',
+
+
                 ]
                 // 'invalidchars',
             ],
             'staf' => [
                 'except' => [
-                    'Child/*',
-                    'Dashboard/*',
-                    'Dewasa/*',
-                    'Remaja/*',
-                    'Jadwal/*',
-                    'Vaccines/*'
+                    // 'Child/*',
+                    // 'Dashboard/*',
+                    // 'Dewasa/*',
+                    // 'Remaja/*',
+                    // '/Daftar',
+                    // 'Jadwal/*',
+                    // 'Vaccines/*',
+                    // 'Daftar/*',
+
+                    // '/Participant',
+                    // '/',
+
+
                 ]
                 // 'invalidchars',
             ],

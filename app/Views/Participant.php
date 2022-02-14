@@ -98,8 +98,8 @@
     </div>
     <!-- #END# Page Loader -->
 
-    <form method="post" action="" enctype="multipart/form-data">
 
+    <form method="post" action="" enctype="multipart/form-data">
 
         <div class="login-box" style="margin: 20px;">
             <div class="logo">
@@ -126,9 +126,10 @@
                     </nav><br /><br />
                     <!-- 1-->
                     <!-- 1-->
+                    <?php echo form_open('Daftar/validation') ?>
 
 
-                    <form action="Daftar/validation" method="POST">
+                    <form action="" method="POST">
                         <div class="input-group mb-3"><span class="input-group-addon input-group-sm">
                                 <button class="btn btn-outline-secondary" name="src" type="submit" id="button-addon1"><i class="material-icons">search</i></button>
 
@@ -143,7 +144,9 @@
                 </div>
             </div>
         </div>
+
     </form>
+    <?php echo form_close() ?>
     <div class="card1">
 
         <div class="card-body">
@@ -194,6 +197,7 @@
                                 </td>
                             </tr>
                         <?php } ?>
+
 
                     </tbody>
                 </table>

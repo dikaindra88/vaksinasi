@@ -22,11 +22,15 @@ class Remaja extends BaseController
             'title' => 'Halaman | Remaja',
             'participant' => $this->Participants->getRemaja()
         );
-        $data['remaja'] = $this->Participants->countRemaja();
-        $data['L'] = $this->Participants->countMaler();
-        $data['P'] = $this->Participants->countFemaler();
+        if (session()->get('status') == True) {
+            $data['remaja'] = $this->Participants->countRemaja();
+            $data['L'] = $this->Participants->countMaler();
+            $data['P'] = $this->Participants->countFemaler();
 
-        echo view('Remaja/index', $data);
+            echo view('Remaja/index', $data);
+        } else {
+            return redirect()->to('Auth/login');
+        }
     }
     public function getDetail($participant_id)
     {

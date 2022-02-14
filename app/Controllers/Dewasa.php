@@ -22,11 +22,14 @@ class Dewasa extends BaseController
             'title' => 'Halaman | Dewasa',
             'participant' => $this->Participants->getDewasa()
         );
-
-        $data['dewasa'] = $this->Participants->countDewasa();
-        $data['L'] = $this->Participants->countMale();
-        $data['P'] = $this->Participants->countFemale();
-        echo view('Dewasa/index', $data);
+        if (session()->get('status') == True) {
+            $data['dewasa'] = $this->Participants->countDewasa();
+            $data['L'] = $this->Participants->countMale();
+            $data['P'] = $this->Participants->countFemale();
+            echo view('Dewasa/index', $data);
+        } else {
+            return redirect()->to('Auth/login');
+        }
     }
     public function getDetail($participant_id)
     {

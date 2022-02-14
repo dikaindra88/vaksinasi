@@ -15,12 +15,16 @@ class Admin extends BaseController
 
     public function index()
     {
-        $data = array(
-            'title' => 'Halaman | Admin',
-            'users' => $this->UsersModel->getData()
-        );
-        $data['Admin'] = $this->UsersModel->countUsers();
-        echo view('Admin/index', $data);
+        if (session()->get('status') == 'admin') {
+            $data = array(
+                'title' => 'Halaman | Admin',
+                'users' => $this->UsersModel->getData()
+            );
+            $data['Admin'] = $this->UsersModel->countUsers();
+            echo view('Admin/index', $data);
+        } else {
+            return redirect()->to('Auth/login');
+        }
     }
 
     public function getDetail($id_user)

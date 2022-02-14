@@ -34,6 +34,8 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/Daftar', 'Daftar::index');
 $routes->post('/Auth/cek_login', 'Auth::cek_login');
+$routes->post('/Daftar/validation', 'Daftar::validation');
+$routes->get('/Daftar/validation', 'Daftar::validation');
 
 //Routes Dewasa
 $routes->get('/Dewasa/index', 'Dewasa::index');

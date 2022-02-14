@@ -14,12 +14,16 @@ class Vaccines extends BaseController
     }
     public function index()
     {
-        $data = array(
-            'title' => 'Halaman | Vaksin',
-            'vaccines' => $this->VaccinesModel->getData()
-        );
+        if (session()->get('status') == True) {
+            $data = array(
+                'title' => 'Halaman | Vaksin',
+                'vaccines' => $this->VaccinesModel->getData()
+            );
 
-        echo view('Vaksin/index', $data);
+            echo view('Vaksin/index', $data);
+        } else {
+            return redirect()->to('Auth/login');
+        }
     }
     public function getUpdate($vaccines_id)
     {

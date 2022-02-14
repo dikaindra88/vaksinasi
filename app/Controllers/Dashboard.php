@@ -16,9 +16,13 @@ class Dashboard extends BaseController
         $data = [
             'title' => 'Halaman | Dashboard'
         ];
-        $data['dewasa'] = $this->hitung->countDewasa();
-        $data['remaja'] = $this->hitung->countRemaja();
-        $data['Child'] = $this->hitung->countChild();
-        echo view('Dashboard', $data);
+        if (session()->get('status') == True) {
+            $data['dewasa'] = $this->hitung->countDewasa();
+            $data['remaja'] = $this->hitung->countRemaja();
+            $data['Child'] = $this->hitung->countChild();
+            echo view('Dashboard', $data);
+        } else {
+            return redirect()->to('Auth/login');
+        }
     }
 }

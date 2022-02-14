@@ -17,13 +17,16 @@ class Jadwal extends BaseController
 
     public function index()
     {
+        if (session()->get('status') == True) {
+            $data = array(
+                'title' => 'Halaman | Jadwal',
+                'participant' => $this->Participants->getAll()
+            );
 
-        $data = array(
-            'title' => 'Halaman | Jadwal',
-            'participant' => $this->Participants->getAll()
-        );
-
-        echo view('Jadwal/index', $data);
+            echo view('Jadwal/index', $data);
+        } else {
+            return redirect()->to('Auth/login');
+        }
     }
     public function getDetail($participant_id)
     {
