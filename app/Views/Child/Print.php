@@ -35,15 +35,15 @@
             <tr>
                 <th>No</th>
                 <th>NIK</th>
-                <th>Name</th>
-                <th>L/P</th>
+                <th>Nama</th>
+                <th>Jenis Kelamin</th>
                 <!-- <th>Lahir</th> -->
-                <th>Birth Date</th>
-                <th>Vaccines Type</th>
-                <th>Phase</th>
-                <th>Vaccination Date</th>
-                <th>Phone</th>
-                <th>Address</th>
+                <th>Tanggal Lahir</th>
+                <th>Jenis Vaksin</th>
+                <th>Fase</th>
+                <th>Tanggal Vaksinasi</th>
+                <th>No. Telp</th>
+                <th>Alamat</th>
 
             </tr>
 

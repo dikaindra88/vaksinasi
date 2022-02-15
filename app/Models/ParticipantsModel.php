@@ -108,7 +108,7 @@ class ParticipantsModel extends Model
     //hitung jumlah laki-laki di data dewasa
     public function countMale()
     {
-        $query = $this->db->query("SELECT * FROM participant WHERE role_id='1' AND gender='L'");
+        $query = $this->db->query("SELECT * FROM participant WHERE role_id='1' AND gender='Laki-laki'");
         $L = $query->getNumRows();
         return $L;
     }
@@ -116,7 +116,7 @@ class ParticipantsModel extends Model
     //hitung jumlah laki-laki di data remaja
     public function countMaler()
     {
-        $query = $this->db->query("SELECT * FROM participant WHERE role_id='2' AND gender='L'");
+        $query = $this->db->query("SELECT * FROM participant WHERE role_id='2' AND gender='Laki-laki'");
         $L = $query->getNumRows();
         return $L;
     }
@@ -124,7 +124,7 @@ class ParticipantsModel extends Model
     //hitung jumlah laki-laki di data anak-anak
     public function countMalec()
     {
-        $query = $this->db->query("SELECT * FROM participant WHERE role_id='3' AND gender='L'");
+        $query = $this->db->query("SELECT * FROM participant WHERE role_id='3' AND gender='Laki-laki'");
         $L = $query->getNumRows();
         return $L;
     }
@@ -132,7 +132,7 @@ class ParticipantsModel extends Model
     //hitung jumlah perempuan di data dewasa
     public function countFemale()
     {
-        $query = $this->db->query("SELECT * FROM participant WHERE role_id='1'AND gender='P'");
+        $query = $this->db->query("SELECT * FROM participant WHERE role_id='1'AND gender='Perempuan'");
         $P = $query->getNumRows();
         return $P;
     }
@@ -140,7 +140,7 @@ class ParticipantsModel extends Model
     //hitung jumlah perempuan di data remaja
     public function countFemaler()
     {
-        $query = $this->db->query("SELECT * FROM participant WHERE role_id='2'AND gender='P'");
+        $query = $this->db->query("SELECT * FROM participant WHERE role_id='2'AND gender='Perempuan'");
         $P = $query->getNumRows();
         return $P;
     }
@@ -148,7 +148,7 @@ class ParticipantsModel extends Model
     //hitung jumlah perempuan di data anak-anak
     public function countFemalec()
     {
-        $query = $this->db->query("SELECT * FROM participant WHERE role_id='3'AND gender='P'");
+        $query = $this->db->query("SELECT * FROM participant WHERE role_id='3'AND gender='Perempuan'");
         $P = $query->getNumRows();
         return $P;
     }

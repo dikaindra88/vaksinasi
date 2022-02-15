@@ -44,6 +44,8 @@ class Dewasa extends BaseController
     {
         $data = array(
             'title' => 'Dewasa | Edit',
+            'role' => $this->Participants->getRole(),
+            'vaccines' => $this->Participants->getVaccines(),
             'Update' => $this->Participants->getDetail($participant_id)
         );
 
@@ -65,6 +67,7 @@ class Dewasa extends BaseController
             'vaccination_date' => $this->request->getPost('vaccination_date'),
             'address' => $this->request->getPost('address')
         ];
+
         $this->Participants->editData($data, $participant_id);
         session()->setFlashdata('pesan', 'Data Berhasil Di Ubah.');
         return redirect()->to('Dewasa/index');

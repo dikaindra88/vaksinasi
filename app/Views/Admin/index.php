@@ -52,7 +52,7 @@
                             <tr class="bg-primary" style="color:white; font-size:10pt;">
                                 <th>No</th>
                                 <th>Username</th>
-                                <th>Name</th>
+                                <th>Nama</th>
                                 <th>Email</th>
                                 <!-- <th>Lahir</th> -->
 
@@ -83,7 +83,7 @@
                                                     <?= csrf_field(); ?>
                                                     <input type="hidden" name="_method" value="Details">
                                                     <button type="submit" class="dropdown-item"><i class="nav-icon fas fa-eye"></i>
-                                                        Details
+                                                        Lihat
                                                     </button>
                                                 </form>
                                                 <div class="dropdown-divider"></div>
@@ -91,7 +91,7 @@
                                                     <?= csrf_field(); ?>
                                                     <input type="hidden" name="_method" value="Edit">
                                                     <button type="submit" class="dropdown-item"><i class="nav-icon fas fa-edit"></i>
-                                                        Edit
+                                                        Ubah
                                                     </button>
                                                 </form>
                                                 <div class="dropdown-divider"></div>
@@ -99,7 +99,7 @@
                                                     <?= csrf_field(); ?>
                                                     <input type="hidden" name="_method" value="Delete">
                                                     <button type="submit" class="dropdown-item" onclick="return confirm('Apakah anda yakin?');"><i class="nav-icon fas fa-trash-alt"></i>
-                                                        Delete
+                                                        Hapus
                                                     </button>
                                                 </form>
 

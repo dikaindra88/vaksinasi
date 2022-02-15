@@ -14,8 +14,8 @@
 
             <!-- /.card-header -->
             <div class="card-body">
-
-                <form action="<?= base_url('Vaccines/EditAction/') . '/' . $Update[0]['vaccines_id']; ?>" method="post">
+                <?php echo form_open('Vaccines/EditAction/' . $Update[0]['vaccines_id']); ?>
+                <form action="" method="post">
 
                     <table class="table table-striped table-middle">
                         <tr>
@@ -44,6 +44,7 @@
         </button>
         <input type="hidden" name="vaccines_id" value="<?php echo $Update[0]['vaccines_id']; ?>">
         </form>
+        <?php echo form_close() ?>
     </div>
     </div>
     </div>

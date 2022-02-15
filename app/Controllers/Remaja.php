@@ -20,8 +20,10 @@ class Remaja extends BaseController
 
         $data = array(
             'title' => 'Halaman | Remaja',
+
             'participant' => $this->Participants->getRemaja()
         );
+
         if (session()->get('status') == True) {
             $data['remaja'] = $this->Participants->countRemaja();
             $data['L'] = $this->Participants->countMaler();
@@ -45,6 +47,8 @@ class Remaja extends BaseController
     {
         $data = array(
             'title' => 'Remaja | Edit',
+            'role' => $this->Participants->getRole(),
+            'vaccines' => $this->Participants->getVaccines(),
             'Update' => $this->Participants->getDetail($participant_id)
         );
 

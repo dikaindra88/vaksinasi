@@ -157,15 +157,15 @@
                         <tr class="bg-success" style="color:white; font-size:10pt;">
 
                             <th>NIK</th>
-                            <th>Name</th>
-                            <th>L/P</th>
+                            <th>Nama</th>
+                            <th>Jenis Kelamin</th>
                             <!-- <th>Lahir</th> -->
-                            <th>Birth Date</th>
-                            <th>Vaccines Type</th>
-                            <th>Phase</th>
-                            <th>Vaccination Date</th>
-                            <th>Phone</th>
-                            <th>Address</th>
+                            <th>Tanggal Lahir</th>
+                            <th>Jenis Vaksin</th>
+                            <th>Fase</th>
+                            <th>Tanggal Vaksinasi</th>
+                            <th>No. Telp</th>
+                            <th>Alamat</th>
                             <th>Aksi</th>
                         </tr>
 
@@ -179,10 +179,10 @@
                                 <td style="font-size: 9pt;"><?= $row['participant_name'] ?></td>
 
                                 <td style="font-size: 9pt;"><?= $row['gender'] ?></td>
-                                <td style="font-size: 9pt;"><?= $row['birth_date'] ?></td>
+                                <td style="font-size: 9pt;"><?= ($row['birth_date'] != '0000-00-00') ? date('d-m-Y', strtotime($row['birth_date'])) : '' ?></td>
                                 <td style="font-size: 9pt;"><?= $row['vaccines_type'] ?></td>
                                 <td style="font-size: 9pt;"><?= $row['vaccines_phase'] ?></td>
-                                <td style="font-size: 9pt;"><?= $row['vaccination_date'] ?></td>
+                                <td style="font-size: 9pt;"><?= ($row['vaccination_date'] != '0000-00-00') ? date('d-m-Y', strtotime($row['vaccination_date'])) : '' ?></td>
                                 <td style="font-size: 9pt;"><?= $row['phone_number'] ?></td>
                                 <td style="font-size: 9pt;"><?= $row['address'] ?></td>
                                 <td>

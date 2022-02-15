@@ -189,7 +189,7 @@
                             <i class="material-icons">event</i>
                         </span>
                         <div class="form-line">
-                            <input type="input" class="form-control datepicker1" name="vaccination_date" id="datepicker1" autocomplete="hidden" placeholder=" Pilih tanggal untuk melakukan vaksinasi" required autofocus />
+                            <input type="input" class="form-control datepicker" name="vaccination_date" id="datepicker1" autocomplete="hidden" placeholder=" Pilih tanggal untuk melakukan vaksinasi" required autofocus />
                         </div>
                     </div>
 
@@ -229,9 +229,9 @@
                             <i class="material-icons">group</i>
                         </span>
                         <div class="">
-                            <input name="gender" value="L" type="radio" id="radio_1" checked />
+                            <input name="gender" value="Laki-laki" type="radio" id="radio_1" checked />
                             <label for="radio_1">Laki-Laki </label>
-                            <input name="gender" value="P" type="radio" id="radio_2" />
+                            <input name="gender" value="Perempuan" type="radio" id="radio_2" />
                             <label for="radio_2">Perempuan</label>
                         </div>
                     </div>
@@ -305,10 +305,10 @@
 
             $('.datepicker1').datepicker({
                 minDate: -0,
-
+                format: "YYYY-MM-DD",
                 autoclose: true,
                 todayHighlight: true,
-                format: 'YYYY-MM-DD',
+
                 clearButton: true,
                 weekStart: 1,
                 time: false

@@ -42,15 +42,15 @@
                             <tr class="bg-primary" style="color:white; font-size:10pt;">
                                 <th>No</th>
                                 <th>NIK</th>
-                                <th>Name</th>
-                                <th>L/P</th>
+                                <th>Nama</th>
+                                <th>Jenis Kelamin</th>
                                 <!-- <th>Lahir</th> -->
-                                <th>Birth Date</th>
-                                <th>Vaccines Type</th>
-                                <th>Phase</th>
-                                <th>Vaccination Date</th>
-                                <th>Phone</th>
-                                <th>Address</th>
+                                <th>Tanggal Lahir</th>
+                                <th>Jenis Vaksin</th>
+                                <th>Fase</th>
+                                <th>Tanggal Vaksinasi</th>
+                                <th>No. Telp</th>
+                                <th>Alamat</th>
                                 <th>Aksi</th>
                             </tr>
 
@@ -81,7 +81,7 @@
                                                     <?= csrf_field(); ?>
                                                     <input type="hidden" name="_method" value="Details">
                                                     <button type="submit" class="dropdown-item"><i class="nav-icon fas fa-eye"></i>
-                                                        Details
+                                                        Lihat
                                                     </button>
                                                 </form>
                                                 <div class="dropdown-divider"></div>
@@ -89,7 +89,7 @@
                                                     <?= csrf_field(); ?>
                                                     <input type="hidden" name="_method" value="Edit">
                                                     <button type="submit" class="dropdown-item"><i class="nav-icon fas fa-edit"></i>
-                                                        Edit
+                                                        Ubah
                                                     </button>
                                                 </form>
                                                 <div class="dropdown-divider"></div>
@@ -97,7 +97,7 @@
                                                     <?= csrf_field(); ?>
                                                     <input type="hidden" name="_method" value="Delete">
                                                     <button type="submit" class="dropdown-item" onclick="return confirm('Apakah anda yakin?');"><i class="nav-icon fas fa-trash-alt"></i>
-                                                        Delete
+                                                        Hapus
                                                     </button>
                                                 </form>
 

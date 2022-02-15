@@ -20,6 +20,7 @@ class Child extends BaseController
 
         $data = array(
             'title' => 'Halaman | Anak-anak',
+
             'participant' => $this->Participants->getChild()
         );
         if (session()->get('status') == True) {
@@ -44,6 +45,8 @@ class Child extends BaseController
     {
         $data = array(
             'title' => 'Anak-anak | Edit',
+            'role' => $this->Participants->getRole(),
+            'vaccines' => $this->Participants->getVaccines(),
             'Update' => $this->Participants->getDetail($participant_id)
         );
 

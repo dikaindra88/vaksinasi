@@ -14,12 +14,12 @@
 
             <!-- /.card-header -->
             <div class="card-body">
-
-                <form action="<?= base_url('Admin/EditAction/') . '/' . $Update[0]['id_user']; ?>" method="post">
+                <?php echo form_open('Admin/EditAction/' . $Update[0]['id_user']); ?>
+                <form action="" method="post">
 
                     <table class="table table-striped table-middle">
                         <tr>
-                            <th width="20%">Name</th>
+                            <th width="20%">Nama</th>
                             <td width="1%">:</td>
                             <td><input type="text" class="form-control" name="name" value="<?php echo $Update[0]['name']; ?>"></td>
                         </tr>
@@ -71,6 +71,7 @@
         </button>
         <input type="hidden" name="id_user" value="<?php echo $Update[0]['id_user']; ?>">
         </form>
+        <?php echo form_close() ?>
     </div>
     </div>
     </div>

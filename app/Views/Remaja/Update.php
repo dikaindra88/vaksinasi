@@ -14,22 +14,23 @@
 
             <!-- /.card-header -->
             <div class="card-body">
+                <?php echo form_open('Remaja/EditAction/' . $Update[0]['participant_id']); ?>
 
-                <form action="<?= base_url('Remaja/EditAction/') . '/' . $Update[0]['participant_id']; ?>" method="post">
+                <form action="" method="post">
 
                     <table class="table table-striped table-middle">
                         <tr>
-                            <th width="20%">Participant Nik</th>
+                            <th width="20%">NIK Peserta</th>
                             <td width="1%">:</td>
                             <td><input type="text" class="form-control" name="participant_nik" value="<?php echo $Update[0]['participant_nik']; ?>"></td>
                         </tr>
                         <tr>
-                            <th>Participant Name</th>
+                            <th>Nama Peserta</th>
                             <td>:</td>
                             <td><input type="text" class="form-control" name="participant_name" value="<?php echo $Update[0]['participant_name']; ?>"></td>
                         </tr>
                         <tr>
-                            <th>Birth Date</th>
+                            <th>Tanggal Lahir</th>
                             <td>:</td>
                             <td>
                                 <div class="input-group mb-3">
@@ -43,24 +44,24 @@
                             </td>
                         </tr>
                         <tr>
-                            <th>Phone Number</th>
+                            <th>No. Telp</th>
                             <td>:</td>
                             <td><input type="text" class="form-control" name="phone_number" value="<?php echo $Update[0]['phone_number']; ?>"></td>
                         </tr>
                         <tr>
-                            <th>Participant Type</th>
+                            <th>Kategori</th>
                             <td>:</td>
                             <td>
                                 <select class="form-control selectpicker" name="role_id" required>
                                     <option value="<?php echo $Update[0]['role_id'] ?>" selected><?php echo $Update[0]['role'] ?></option>
-                                    <option value="1">Dewasa</option>
-                                    <option value="2">Remaja</option>
-                                    <option value="3">Anak-anak</option>
+                                    <?php foreach ($role as $row) : ?>
+                                        <option value="<?= $row['role_id'] ?>"><?= $row['role'] ?></option>
+                                    <?php endforeach ?>
                                 </select>
                             </td>
                         </tr>
                         <tr>
-                            <th>Vaccination Date</th>
+                            <th>Tanggal Vaksinasi</th>
                             <td>:</td>
                             <td>
                                 <div class="input-group mb-3">
@@ -73,49 +74,49 @@
                             </td>
                         </tr>
                         <tr>
-                            <th>Vaccines Type</th>
+                            <th>Jenis Vaksin</th>
                             <td>:</td>
                             <td>
                                 <select class="form-control selectpicker" name="vaccines_id" required>
                                     <option value="<?php echo $Update[0]['vaccines_id'] ?>" selected><?php echo $Update[0]['vaccines_type'] ?></option>
-                                    <option value="1">Sinovac</option>
-                                    <option value="2">Astrazeneca</option>
-                                    <option value="3">Booster</option>
+                                    <?php foreach ($vaccines as $row) : ?>
+                                        <option value="<?= $row['vaccines_id'] ?>"><?= $row['vaccines_type'] ?></option>
+                                    <?php endforeach ?>
                                 </select>
                             </td>
                         </tr>
                         <tr>
-                            <th>Vaccines Phase</th>
+                            <th>Fase</th>
                             <td>:</td>
                             <td><input type="text" class="form-control" name="vaccines_phase" value="<?php echo $Update[0]['vaccines_phase']; ?>"></td>
                         </tr>
 
                         <tr>
-                            <th>Address</th>
+                            <th>Alamat</th>
                             <td>:</td>
                             <td><input type="text" class="form-control" name="address" value="<?php echo $Update[0]['address']; ?>"></td>
                         </tr>
                         <tr>
-                            <th>Gender</th>
+                            <th>Jenis Kelamin</th>
                             <td>:</td>
                             <td>
                                 <?php
-                                if ($Update[0]['gender'] == 'L') {
+                                if ($Update[0]['gender'] == 'Laki-laki') {
                                 ?>
 
                                     <div class="radio">
-                                        <label class="radio"><input type="radio" name="gender" value="L" checked="checked"> Laki - laki</label>
+                                        <label class="radio"><input type="radio" name="gender" value="Laki-laki" checked="checked"> Laki - laki</label>
                                     </div>
                                     <div class="radio">
-                                        <label class="radio"><input type="radio" name="gender" value="P"> Perempuan</label>
+                                        <label class="radio"><input type="radio" name="gender" value="Perempuan"> Perempuan</label>
                                     </div>
                                 <?php } else {
                                 ?>
                                     <div class="radio">
-                                        <label class="radio"><input type="radio" name="gender" value="L"> Laki - laki</label>
+                                        <label class="radio"><input type="radio" name="gender" value="Laki-laki"> Laki - laki</label>
                                     </div>
                                     <div class="radio">
-                                        <label class="radio"><input type="radio" name="gender" value="P" checked="checked"> Perempuan</label>
+                                        <label class="radio"><input type="radio" name="gender" value="Perempuan" checked="checked"> Perempuan</label>
                                     </div>
                                 <?php
                                 } ?>
@@ -135,6 +136,7 @@
         </button>
         <input type="hidden" name="participant_id" value="<?php echo $Update[0]['participant_id']; ?>">
         </form>
+        <?php echo form_close() ?>
     </div>
     </div>
     </div>

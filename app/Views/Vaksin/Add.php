@@ -14,8 +14,8 @@
 
             <!-- /.card-header -->
             <div class="card-body">
-
-                <form method="post" action="<?= base_url('Vaccines/insert') ?>" enctype="multipart/form-data">
+                <?php echo form_open('Vaccines/insert') ?>
+                <form method="post" action="" enctype="multipart/form-data">
 
                     <table class="table table-striped table-middle">
                         <tr>
@@ -29,7 +29,7 @@
                             <td><input type="text" class="form-control" name="vaccines_type"></td>
                         </tr>
 
-
+                        <?php echo form_close() ?>
 
             </div>
         </div>

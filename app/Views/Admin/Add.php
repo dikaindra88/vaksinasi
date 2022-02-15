@@ -14,12 +14,12 @@
 
             <!-- /.card-header -->
             <div class="card-body">
-
-                <form method="post" action="<?= base_url('Admin/insert') ?>" enctype="multipart/form-data">
+                <?php echo form_open('Admin/insert') ?>
+                <form method="post" action="" enctype="multipart/form-data">
 
                     <table class="table table-striped table-middle">
                         <tr>
-                            <th width="20%">Name</th>
+                            <th width="20%">Nama</th>
                             <td width="1%">:</td>
                             <td><input type="text" class="form-control" name="name"></td>
                         </tr>
@@ -54,7 +54,7 @@
                                 </select>
                             </td>
                         </tr>
-
+                        <?php echo form_close() ?>
 
             </div>
         </div>

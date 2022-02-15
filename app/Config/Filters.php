@@ -40,70 +40,12 @@ class Filters extends BaseConfig
             // 'honeypot',
             'csrf',
 
-            'users' => [
-                'except' => [
-                    // 'Auth/*',
-                    // '/',
-                    // '/Daftar',
-                    // '/Participant',
-                    // 'Daftar/*',
-                    // 'Daftar/*/*',
 
-                ]
-                // 'invalidchars',
-            ],
-            'staf' => [
-                'except' => [
-                    // 'Auth/*',
-                    // '/Daftar',
-                    // 'Daftar/*',
-                    // '/',
-                    // '/Participant',
-                    // 'Daftar/*/*',
-
-                ]
-                // 'invalidchars',
-            ]
 
         ],
 
         'after' => [
-            'users' => [
-                'except' => [
-                    // 'Child/*',
-                    // 'Dashboard/*',
-                    // 'Dewasa/*',
-                    // 'Remaja/*',
-                    // 'Jadwal/*',
-                    // 'Vaccines/*',
-                    // '/Daftar',
-                    // 'Admin/*',
-                    // 'Daftar/*',
-                    // '/',
-                    // '/Participant',
 
-
-                ]
-                // 'invalidchars',
-            ],
-            'staf' => [
-                'except' => [
-                    // 'Child/*',
-                    // 'Dashboard/*',
-                    // 'Dewasa/*',
-                    // 'Remaja/*',
-                    // '/Daftar',
-                    // 'Jadwal/*',
-                    // 'Vaccines/*',
-                    // 'Daftar/*',
-
-                    // '/Participant',
-                    // '/',
-
-
-                ]
-                // 'invalidchars',
-            ],
             'toolbar',
             // 'honeypot',
             // 'secureheaders',

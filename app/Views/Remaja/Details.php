@@ -21,52 +21,52 @@
                 <table class="table table-striped table-middle">
 
                     <tr>
-                        <th width="20%">Participant Nik</th>
+                        <th width="20%">NIK Peserta</th>
                         <td width="1%">:</td>
                         <td><?php echo $Detail[0]['participant_nik']; ?></td>
                     </tr>
                     <tr>
-                        <th>Name</th>
+                        <th>Nama Peserta</th>
                         <td>:</td>
                         <td><?php echo $Detail[0]['participant_name']; ?></td>
                     </tr>
                     <tr>
-                        <th>Birth Date</th>
+                        <th>Tanggal Lahir</th>
                         <td>:</td>
                         <td><?php echo ($Detail[0]['birth_date'] != '0000-00-00') ? date('d-m-Y', strtotime($Detail[0]['birth_date'])) : ''  ?></td>
                     </tr>
                     <tr>
-                        <th>Gender</th>
+                        <th>Jenis Kelamin</th>
                         <td>:</td>
                         <td><?php echo $Detail[0]['gender']; ?></td>
                     </tr>
                     <tr>
-                        <th>Participant Type</th>
+                        <th>Kategori</th>
                         <td>:</td>
                         <td><?php echo $Detail[0]['role']; ?></td>
                     </tr>
                     <tr>
-                        <th>Phone Number</th>
+                        <th>No. Telp</th>
                         <td>:</td>
                         <td><?php echo $Detail[0]['phone_number']; ?></td>
                     </tr>
                     <tr>
-                        <th>Vaccines Type</th>
+                        <th>Jenis Vaksin</th>
                         <td>:</td>
                         <td><?php echo $Detail[0]['vaccines_type']; ?></td>
                     </tr>
                     <tr>
-                        <th>Vaccination Date</th>
+                        <th>Tanggal Vaksinasi</th>
                         <td>:</td>
                         <td><?php echo ($Detail[0]['vaccination_date'] != '0000-00-00') ? date('d-m-Y', strtotime($Detail[0]['vaccination_date'])) : ''  ?></td>
                     </tr>
                     <tr>
-                        <th>Vaccines Phase</th>
+                        <th>Fase</th>
                         <td>:</td>
                         <td><?php echo $Detail[0]['vaccines_phase']; ?></td>
                     </tr>
                     <tr>
-                        <th>Address</th>
+                        <th>Alamat</th>
                         <td>:</td>
                         <td><?php echo $Detail[0]['address']; ?></td>
                     </tr>

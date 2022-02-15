@@ -76,7 +76,7 @@
                                                     <?= csrf_field(); ?>
                                                     <input type="hidden" name="_method" value="Edit">
                                                     <button type="submit" class="dropdown-item"><i class="nav-icon fas fa-edit"></i>
-                                                        Edit
+                                                        Ubah
                                                     </button>
                                                 </form>
                                                 <div class="dropdown-divider"></div>
@@ -84,7 +84,7 @@
                                                     <?= csrf_field(); ?>
                                                     <input type="hidden" name="_method" value="Delete">
                                                     <button type="submit" class="dropdown-item" onclick="return confirm('Apakah anda yakin?');"><i class="nav-icon fas fa-trash-alt"></i>
-                                                        Delete
+                                                        Hapus
                                                     </button>
                                                 </form>
 

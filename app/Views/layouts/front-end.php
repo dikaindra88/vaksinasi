@@ -26,7 +26,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="signout" href="<?= base_url('Auth/logout') ?>">
-                    <i class="fas fa-sign-out-alt nav-icon"></i> Logout
+                    <i class="fas fa-sign-out-alt nav-icon"></i> Keluar
                 </a>
             </li>
     </nav>

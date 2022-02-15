@@ -21,12 +21,12 @@
                         <thead>
                             <tr class="bg-primary" style="color:white; font-size:10pt;">
                                 <th>No</th>
-                                <th>Name</th>
-                                <th>Vaccines Type</th>
-                                <th>Phase</th>
-                                <th>Vaccination Date</th>
-                                <th>Phone</th>
-                                <th>Register Date</th>
+                                <th>Nama</th>
+                                <th>Jenis Vaksin</th>
+                                <th>Fase</th>
+                                <th>Tanggal Vaksinasi</th>
+                                <th>No. Telp</th>
+                                <th>Tanggal Daftar</th>
                                 <th>Aksi</th>
                             </tr>
 
@@ -53,7 +53,7 @@
                                                     <?= csrf_field(); ?>
                                                     <input type="hidden" name="_method" value="Details">
                                                     <button type="submit" class="dropdown-item"><i class="nav-icon fas fa-eye"></i>
-                                                        Details
+                                                        Lihat
                                                     </button>
                                                 </form>
                                                 <div class="dropdown-divider"></div>

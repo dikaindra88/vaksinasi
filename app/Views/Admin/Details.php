@@ -21,7 +21,7 @@
                 <table class="table table-striped table-middle">
 
                     <tr>
-                        <th width="20%">Name</th>
+                        <th width="20%">Nama</th>
                         <td width="1%">:</td>
                         <td><?php echo $Detail[0]['name']; ?></td>
                     </tr>
