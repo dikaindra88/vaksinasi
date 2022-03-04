@@ -49,7 +49,7 @@
                with font-awesome or any other icon font library -->
 
                     <li class="nav-item">
-                        <a href="<?= base_url('/Dashboard') ?>" class="nav-link <?php if (current_url(true)->getSegment('1') == 'Dashboard') {
+                        <a href="<?= base_url('/Dashboard') ?>" class="nav-link <?php if (current_url(true)->getSegment('2') == 'Dashboard') {
                                                                                     echo "active";
                                                                                 } ?> ">
                             <i class="nav-icon fas fa-home"></i>
@@ -61,7 +61,7 @@
 
                     <li class="nav-header">JADWAL</li>
                     <li class="nav-item">
-                        <a href="<?= base_url('Jadwal/index') ?>" class="nav-link <?php if (current_url(true)->getSegment('1') == 'Jadwal') {
+                        <a href="<?= base_url('Jadwal/index') ?>" class="nav-link <?php if (current_url(true)->getSegment('2') == 'Jadwal') {
                                                                                         echo "active";
                                                                                     } ?> ">
                             <i class="nav-icon far fa-calendar-alt"></i>
@@ -73,7 +73,7 @@
 
                     <li class="nav-header">DATA PESERTA</li>
                     <li class="nav-item">
-                        <a href="<?= base_url('Dewasa/index') ?>" class="nav-link <?php if (current_url(true)->getSegment('1') == 'Dewasa') {
+                        <a href="<?= base_url('Dewasa/index') ?>" class="nav-link <?php if (current_url(true)->getSegment('2') == 'Dewasa') {
                                                                                         echo "active";
                                                                                     } ?> ">
                             <i class="nav-icon fas fa-users"></i>
@@ -83,7 +83,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?= base_url('Remaja/index') ?>" class="nav-link <?php if (current_url(true)->getSegment('1') == 'Remaja') {
+                        <a href="<?= base_url('Remaja/index') ?>" class="nav-link <?php if (current_url(true)->getSegment('2') == 'Remaja') {
                                                                                         echo "active";
                                                                                     } ?> ">
                             <i class="nav-icon fas fa-user-friends"></i>
@@ -93,7 +93,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?= base_url('Child/index') ?>" class="nav-link <?php if (current_url(true)->getSegment('1') == 'Child') {
+                        <a href="<?= base_url('Child/index') ?>" class="nav-link <?php if (current_url(true)->getSegment('2') == 'Child') {
                                                                                         echo "active";
                                                                                     } ?> ">
                             <i class="nav-icon fas fa-child"></i>
@@ -105,7 +105,7 @@
 
                     <li class="nav-header">DATA VAKSIN</li>
                     <li class="nav-item">
-                        <a href="<?= base_url('Vaccines/index') ?>" class="nav-link <?php if (current_url(true)->getSegment('1') == 'Vaccines') {
+                        <a href="<?= base_url('Vaccines/index') ?>" class="nav-link <?php if (current_url(true)->getSegment('2') == 'Vaccines') {
                                                                                         echo "active";
                                                                                     } ?> ">
                             <i class="material-icons">vaccines</i>
@@ -117,7 +117,7 @@
 
                     <li class="nav-header">USERS</li>
                     <li class="nav-item">
-                        <a href="<?= base_url('Admin/index') ?>" class="nav-link <?php if (current_url(true)->getSegment('1') == 'Admin') {
+                        <a href="<?= base_url('Admin/index') ?>" class="nav-link <?php if (current_url(true)->getSegment('2') == 'Admin') {
                                                                                         echo "active";
                                                                                     } ?> ">
                             <i class="nav-icon fas fa-users-cog"></i>
@@ -142,7 +142,7 @@
                with font-awesome or any other icon font library -->
 
                     <li class="nav-item">
-                        <a href="<?= base_url('/Dashboard') ?>" class="nav-link <?php if (current_url(true)->getSegment('1') == 'Dashboard') {
+                        <a href="<?= base_url('/Dashboard') ?>" class="nav-link <?php if (current_url(true)->getSegment('2') == 'Dashboard') {
                                                                                     echo "active";
                                                                                 } ?> ">
                             <i class="nav-icon fas fa-home"></i>
@@ -154,7 +154,7 @@
 
                     <li class="nav-header">JADWAL</li>
                     <li class="nav-item">
-                        <a href="<?= base_url('Jadwal/index') ?>" class="nav-link <?php if (current_url(true)->getSegment('1') == 'Jadwal') {
+                        <a href="<?= base_url('Jadwal/index') ?>" class="nav-link <?php if (current_url(true)->getSegment('2') == 'Jadwal') {
                                                                                         echo "active";
                                                                                     } ?> ">
                             <i class="nav-icon far fa-calendar-alt"></i>
@@ -166,7 +166,7 @@
 
                     <li class="nav-header">DATA PESERTA</li>
                     <li class="nav-item">
-                        <a href="<?= base_url('Dewasa/index') ?>" class="nav-link <?php if (current_url(true)->getSegment('1') == 'Dewasa') {
+                        <a href="<?= base_url('Dewasa/index') ?>" class="nav-link <?php if (current_url(true)->getSegment('2') == 'Dewasa') {
                                                                                         echo "active";
                                                                                     } ?> ">
                             <i class="nav-icon fas fa-users"></i>
@@ -176,7 +176,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?= base_url('Remaja/index') ?>" class="nav-link <?php if (current_url(true)->getSegment('1') == 'Remaja') {
+                        <a href="<?= base_url('Remaja/index') ?>" class="nav-link <?php if (current_url(true)->getSegment('2') == 'Remaja') {
                                                                                         echo "active";
                                                                                     } ?> ">
                             <i class="nav-icon fas fa-user-friends"></i>
@@ -186,7 +186,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?= base_url('Child/index') ?>" class="nav-link <?php if (current_url(true)->getSegment('1') == 'Child') {
+                        <a href="<?= base_url('Child/index') ?>" class="nav-link <?php if (current_url(true)->getSegment('2') == 'Child') {
                                                                                         echo "active";
                                                                                     } ?> ">
                             <i class="nav-icon fas fa-child"></i>
@@ -198,7 +198,7 @@
 
                     <li class="nav-header">DATA VAKSIN</li>
                     <li class="nav-item">
-                        <a href="<?= base_url('Vaccines/index') ?>" class="nav-link <?php if (current_url(true)->getSegment('1') == 'Vaccines') {
+                        <a href="<?= base_url('Vaccines/index') ?>" class="nav-link <?php if (current_url(true)->getSegment('2') == 'Vaccines') {
                                                                                         echo "active";
                                                                                     } ?> ">
                             <i class="material-icons">vaccines</i>

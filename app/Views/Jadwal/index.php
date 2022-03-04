@@ -39,7 +39,7 @@
                                     <td><?= $row['participant_name'] ?></td>
                                     <td><?= $row['vaccines_type'] ?></td>
                                     <td><?= $row['vaccines_phase'] ?></td>
-                                    <td><?= $row['vaccination_date'] ?></td>
+                                    <td><?= ($row['vaccination_date'] != '0000-00-00') ? date('d-m-Y', strtotime($row['vaccination_date'])) : '' ?></td>
                                     <td><?= $row['phone_number'] ?></td>
                                     <td><?= ($row['create_at'] != '0000-00-00') ? Date('d-m-Y H:i:s', strtotime($row['create_at'])) : '' ?></td>
                                     <td>

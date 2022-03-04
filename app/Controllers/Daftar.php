@@ -40,7 +40,7 @@ class Daftar extends BaseController
             'address' => $this->request->getPost('address'),
         ];
         $this->Participants->insertData($data);
-        session()->setFlashdata('tambah', 'Data berhasil di tambahkan!');
+        session()->setFlashdata('tambah', 'Anda Berhasil Daftar.. Silahkan Unduh Bukti Pendaftaran anda!!');
         return redirect()->to('/Daftar');
     }
     public function validation()
@@ -67,7 +67,7 @@ class Daftar extends BaseController
         $option->set('IsHtml5ParserEnabled', true);
         $dompdf = new Dompdf($option);
         $dompdf->loadHtml($html);
-        $dompdf->setPaper('A4', 'potrait');
+        $dompdf->setPaper('legal', 'landscape');
         $dompdf->render();
         $dompdf->stream();
     }

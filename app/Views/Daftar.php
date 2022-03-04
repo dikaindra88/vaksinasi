@@ -16,32 +16,32 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <!-- Material Icon Css -->
-    <link href="assets/css/material-icon.css" rel="stylesheet">
+    <link href="<?= base_url('assets/css/material-icon.css') ?>" rel="stylesheet">
 
     <!-- Bootstrap Core Css -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= base_url('assets/css/bootstrap.css') ?>" rel="stylesheet">
 
     <!-- Waves Effect Css -->
-    <link href="plugins/node-waves/waves.css" rel="stylesheet" />
+    <link href="<?= base_url('plugins/node-waves/waves.css') ?>" rel="stylesheet" />
 
     <!-- Animation Css -->
-    <link href="plugins/animate-css/animate.css" rel="stylesheet" />
+    <link href="<?= base_url('plugins/animate-css/animate.css') ?>" rel="stylesheet" />
 
     <!-- Bootstrap Material Datetime Picker Css -->
-    <link href="plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
+    <link href="<?= base_url('plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css') ?>" rel="stylesheet" />
 
     <!-- Bootstrap Select Css -->
-    <link href="assets/css/bootstrap-select.min.css" rel="stylesheet" />
+    <link href="<?= base_url('assets/css/bootstrap-select.min.css') ?>" rel="stylesheet" />
 
     <!-- Jquery UI Css -->
-    <link href="plugins/jquery-ui/jquery-ui.css" rel="stylesheet">
+    <link href="<?= base_url('plugins/jquery-ui/jquery-ui.css') ?>" rel="stylesheet">
 
     <!-- Custom Css -->
-    <link href="assets/css/style3.css" rel="stylesheet">
+    <link href="<?= base_url('assets/css/style3.css') ?>" rel="stylesheet">
 
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
-    <link href="assets/css/theme-blue.css" rel="stylesheet" />
+    <link href="<?= base_url('assets/css/theme-blue.css') ?>" rel="stylesheet" />
 
     <script>
         $(function() {
@@ -78,7 +78,7 @@
     </style>
 </head>
 
-<body style="background-image:url(assets/img/gbr1.jpg);background-size:cover;background-attachment:fixed;" class="login-page">
+<body style="background-color:#F0FFF0;background-size:cover;background-attachment:fixed;" class="login-page">
 
     <!-- Page Loader-->
     <div class="page-loader-wrapper">
@@ -103,9 +103,9 @@
 
         <div class="login-box" style="margin: 20px;">
             <div class="logo">
-                <p class="align-center"><img src="assets/img/logo-hst.png" style="width: 100px; height: 100px;"></p>
-                <a href="/">RUMAH SAKIT UMUM PAKUHAJI KAB. TANGERANG</a>
-                <small>Jl. Raya Pakuhaji No.88, Pakuhaji, Kecamatan Pakuhaji, Tangerang, Banten 15570</small>
+                <p class="align-center"><img src="<?= base_url('assets/img/logo.png') ?>" style="width: 100px; height: 90px;"></p>
+                <a href="/" style="color: black;">RUMAH SAKIT UMUM PAKUHAJI KAB. TANGERANG</a>
+                <small style="color: black;">Jl. Raya Pakuhaji No.88, Pakuhaji, Kecamatan Pakuhaji, Tangerang, Banten 15570</small>
             </div>
             <div class="card col-10 position-relative">
                 <div class="body">
@@ -252,32 +252,32 @@
 
     <!-- End Login Modal -->
     <!-- Jquery Core Js -->
-    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="<?= base_url('plugins/jquery/jquery.min.js') ?>"></script>
 
-    <script src="plugins/jquery-ui/jquery-ui.js"></script>
+    <script src="<?= base_url('plugins/jquery-ui/jquery-ui.js') ?>"></script>
 
     <!-- Bootstrap Core Js -->
-    <script src="plugins/bootstrap/js/bootstrap.js"></script>
+    <script src="<?= base_url('plugins/bootstrap/js/bootstrap.js') ?>"></script>
 
 
     <!-- Waves Effect Plugin Js -->
-    <script src="plugins/node-waves/waves.js"></script>
+    <script src="<?= base_url('plugins/node-waves/waves.js') ?>"></script>
 
     <!-- Validation Plugin Js -->
-    <script src="plugins/jquery-validation/jquery.validate.js"></script>
+    <script src="<?= base_url('plugins/jquery-validation/jquery.validate.js') ?>"></script>
 
     <!-- Autosize Plugin Js -->
-    <script src="plugins/autosize/autosize.js"></script>
+    <script src="<?= base_url('plugins/autosize/autosize.js') ?>"></script>
 
     <!-- Moment Plugin Js -->
-    <script src="plugins/momentjs/moment.js"></script>
+    <script src="<?= base_url('plugins/momentjs/moment.js') ?>"></script>
 
 
     <!-- Bootstrap Material Datetime Picker Plugin Js -->
-    <script src="plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <script src="<?= base_url('plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js') ?>"></script>
 
     <!-- Custom Js -->
-    <script src="assets/js/admin.js"></script>
+    <script src="<?= base_url('assets/js/admin.js') ?>"></script>
 
     <script>
         $(document).ready(function() {

@@ -16,7 +16,7 @@
                 <div class="col-xs-12">
                     <font color="Grey">
                         <h4>
-                            <center>Selamat datang di Aplikasi Sistem Informasi Pendaftaran Vaksinasi</center>
+                            <center>SELAMAT DATANG DI APLIKASI SISTEM INFORMASI PENDAFTARAN VAKSINASI</center>
                         </h4>
                     </font>
                 </div>

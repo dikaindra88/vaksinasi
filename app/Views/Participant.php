@@ -78,7 +78,7 @@
     </style>
 </head>
 
-<body style="background-image:url(<?= base_url('assets/img/gbr1.jpg') ?>);background-size:cover;background-attachment:fixed;" class="login-page">
+<body style="background-color:#F0FFF0;background-size:cover;background-attachment:fixed;" class="login-page">
 
     <!-- Page Loader-->
     <div class="page-loader-wrapper">
@@ -103,9 +103,9 @@
 
         <div class="login-box" style="margin: 20px;">
             <div class="logo">
-                <p class="align-center"><img src="<?= base_url('assets/img/logo-hst.png') ?>" style="width: 100px; height: 100px;"></p>
-                <a href="/">RUMAH SAKIT UMUM PAKUHAJI KAB. TANGERANG</a>
-                <small>Jl. Raya Pakuhaji No.88, Pakuhaji, Kecamatan Pakuhaji, Tangerang, Banten 15570</small>
+                <p class="align-center"><img src="<?= base_url('assets/img/logo.png') ?>" style="width: 100px; height: 90px;"></p>
+                <a href="/" style="color: black;">RUMAH SAKIT UMUM PAKUHAJI KAB. TANGERANG</a>
+                <small style="color: black;">Jl. Raya Pakuhaji No.88, Pakuhaji, Kecamatan Pakuhaji, Tangerang, Banten 15570</small>
             </div>
             <div class="card col-10 position-relative">
                 <div class="body">

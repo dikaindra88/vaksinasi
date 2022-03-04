@@ -41,9 +41,9 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
                 <a class="navbar-brand" href="/">
-                    <img src="<?= base_url('assets/img/logo-hst.png') ?>" width="43" height="50" alt="" />
+                    <img src="<?= base_url('assets/img/logo.png') ?>" width="45" height="40" alt="" />
                 </a>
-                <h1>RUMAH SAKIT UMUM PAKUHAJI KAB. TANGERANG</h1>
+                <h1>RSU PAKUHAJI</h1>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -124,10 +124,15 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 text-center">
                     <div class="inner-column">
-                        <h1>Selamat Datang Di Website</br> <span>RSUD PAKUHAJI</span></h1>
-                        <h4>Little Story</h4>
-                        <p>RSUD Pakuhaji adalah rumah sakit umum daerah milik Pemerintah dan merupakan salah satu rumah sakit tipe D yang terletak di wilayah Kabupaten Tangerang, Banten. Rumah sakit ini memberikan pelayanan di bidang kesehatan yang didukung oleh layanan dokter spesialis serta ditunjang dengan fasilitas medis lainnya. Selain itu RSUD Pakuhaji juga sebagai rumah sakit rujukan dari faskes tingkat 1, seperti puskesmas atau klinik. </p>
+                        <h1>Visi & Misi RSPH</h1>
+                        <h2>Visi</h2>
+                        <p style="text-align: left;">Menjadikan Rumah sakit Pakuhaji menjadi rumah sakit yang menyenangkan dan terpercaya pilihan masyarakat.</p>
 
+                        <h2>Misi</h2>
+                        <p style="text-align: left;">1. Meningkatkan sumberdaya Rumah Sakit yang tersetandar yang berkulitas.<br>
+                            2. Memberikan pelayanan yang berorientasi kepadsa Kesehatan dan kepuasan pelanggan.<br>
+                            3. Meningkatkan kesejahtraan aparatur Rumah sakit.<br>
+                            4. Menerapkan tata kelola Rumah sakit yang professional, Akuntable dan teransfaran.</p>
                     </div>
                 </div>
             </div>
@@ -167,8 +172,7 @@
                     <div class="col-lg-12">
                         <p class="company-name">All Rights Reserved. &copy; <script>
                                 document.write(new Date().getFullYear());
-                            </script> <a href="#">RSUD PAKUHAJI KAB. TANGERANG</a> Design By
-                            <a href="">Micod</a>
+                            </script> <a href="/">RSUD PAKUHAJI KAB. TANGERANG</a>
                         </p>
                     </div>
                 </div>

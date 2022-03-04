@@ -48,7 +48,6 @@ class Auth extends BaseController
             $passwordx = md5($password);
             $cek_login = $this->UsersModel->login_user($email, $passwordx);
             if ($cek_login) {
-                session()->set('log', true);
                 session()->set('name', $cek_login['name']);
                 session()->set('email', $cek_login['email']);
                 session()->set('status', $cek_login['status']);
